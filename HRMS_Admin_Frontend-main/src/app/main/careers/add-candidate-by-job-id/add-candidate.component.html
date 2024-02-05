@@ -1,0 +1,233 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- User List -->
+        <section class="users-list-wrapper">
+
+            <div class="card">
+                <h2 class="card-header">Add a Candidate </h2>
+                <hr>
+                <section id="reactive-forms" class="card-body">
+                    <div class="row">
+                        
+                        <div class="col-12">
+                          
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form [formGroup]="ReactiveUserDetailsForm" (ngSubmit)="ReactiveUDFormOnSubmit()">
+                                                <div class="row">
+
+                                                   <div class="col-6">
+                                                    <label>Resume</label>
+                                                    <label ng2FileDrop [uploader]="uploader" [ngClass]="{ 'file-drop-over': hasBaseDropZoneOver }"
+                                                        (fileOver)="fileOverBase($event)"
+                                                        class="my-drop-zone py-5 mb-3 text-center font-medium-5 text-uppercase file-drop-zone col-lg-12">
+                                                        Upload your latest resume here
+                                                        <input type="file" ng2FileSelect [uploader]="uploader" style="display: none" />
+                                                    </label>
+                                                   </div>
+
+                                                <div class="col-6">
+                                                    <label>Cover Letter</label>
+                                                    <label ng2FileDrop [uploader]="uploader" [ngClass]="{ 'file-drop-over': hasBaseDropZoneOver }"
+                                                        (fileOver)="fileOverBase($event)"
+                                                        class="my-drop-zone py-5 mb-3 text-center font-medium-5 text-uppercase file-drop-zone col-lg-12">
+                                                        Upload your cover letter here
+                                                        <input type="file" ng2FileSelect [uploader]="uploader" style="display: none" />
+                                                    </label>
+                                                </div>
+
+                                                   
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="firstName">First Name</label>
+                                                            <input type="text" id="firstName" formControlName="firstName"
+                                                                class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.firstName.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.firstName.errors"
+                                                                class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.firstName.errors.required">First Name is
+                                                                    required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="lastName">Last Name</label>
+                                                            <input type="text" id="firstName" formControlName="lastName" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.lastName.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.lastName.errors" class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.lastName.errors.required">Last Name is
+                                                                    required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="UDEmail">Email</label>
+                                                            <input type="text" id="UDEmail" formControlName="email" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.email.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.email.errors"
+                                                                class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.email.errors.required">Email is required
+                                                                </div>
+                                                                <div *ngIf="ReactiveUDForm.email.errors.email">Email must be a valid
+                                                                    email address</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                   
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="lastOrg">Last Organization</label>
+                                                            <input type="text" id="lastOrg" formControlName="lastOrg"
+                                                                class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.lastOrg.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.lastOrg.errors"
+                                                                class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.lastOrg.errors.required">Last Organization is
+                                                                    required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="UDPhoneNumber">Phone Number</label>
+                                                            <input type="number" id="UDPhoneNumber" formControlName="phoneNumber" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.phoneNumber.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.phoneNumber.errors" class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.phoneNumber.errors.required">Phone Number is
+                                                                    required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="address">Address</label>
+                                                            <input type="text" id="address" formControlName="address" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.address.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.address.errors" class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.lastOrg.address.required">Address is
+                                                                    required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="state">State</label>
+                                                            <input type="text" id="state" formControlName="state" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.state.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.state.errors" class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.lastOrg.state.required">State is
+                                                                    required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="zipCode">Zip Code</label>
+                                                            <input type="zipCode" id="UDAge" formControlName="zipCode" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.zipCode.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.zipCode.errors" class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.zipCode.errors.required">Zip Code is required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="UDCountry">Country</label>
+                                                            <select id="UDCountry" formControlName="country" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.country.errors }">
+                                                                <option value="USA">USA</option>
+                                                                <option value="Germany">Germany</option>
+                                                                <option value="Russia">Russia</option>
+                                                                <option value="UK">UK</option>
+                                                            </select>
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.country.errors"
+                                                                class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.country.errors.required">country is required
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="UDLanguage">Language</label>
+                                                            <select id="UDLanguage" formControlName="language" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.language.errors }">
+                                                                <option selected value="English">English</option>
+                                                                <option value="Germany">Germany</option>
+                                                                <option value="French">French</option>
+                                                                <option value="Portuguese">Portuguese</option>
+                                                            </select>
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.language.errors"
+                                                                class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.language.errors.required">language is
+                                                                    required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="currentSalary">Current Salary</label>
+                                                            <input type="currentSalary" id="UDAge" formControlName="currentSalary" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.currentSalary.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.currentSalary.errors" class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.currentSalary.errors.required">Zip Code is required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="expectedSalary">Expected Salary</label>
+                                                            <input type="expectedSalary" id="UDAge" formControlName="expectedSalary" class="form-control"
+                                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.expectedSalary.errors }" />
+                                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.expectedSalary.errors" class="invalid-feedback">
+                                                                <div *ngIf="ReactiveUDForm.expectedSalary.errors.required">Zip Code is required</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                   
+
+                                                    
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <button class="btn btn-primary mr-2 mb-2" type="submit" rippleEffect>Save</button>
+                                                            <button class="btn btn-outline-primary mr-2 mb-2" type="reset" rippleEffect>Discard</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                          
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </section>
+        <!--/ User List -->
+    </div>
+
+
+</div>

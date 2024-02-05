@@ -1,0 +1,127 @@
+<div class="slideout-content">
+    <!-- Modal to add new user starts-->
+    <div class="modalsd modal-slide-in sdfade new-user-modal" id="modals-slide-in">
+        <div class="modal-dialog">
+            <form class="add-new-user modal-content pt-0" (ngSubmit)="(newUserForm.form.valid)" #newUserForm="ngForm">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                    (click)="toggleSidebar('user-management-sidebar')">
+                    ×
+                </button>
+                <div class="modal-header mb-1">
+                    <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+                </div>
+                <div class="modal-body flex-grow-1">
+
+                    <div class="form-group">
+                        <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
+                        <input type="text" class="form-control dt-full-name" id="basic-icon-default-fullname"
+                            placeholder="Enter Role" name="user-fullname" [(ngModel)]="fullname"
+                            [class.error]="newUserForm.submitted && FNameRef.invalid" #FNameRef="ngModel" required
+                            aria-label="Name" aria-describedby="basic-icon-default-fullname2" />
+                        <span *ngIf="newUserForm.submitted && FNameRef.invalid" class="invalid-form">
+                            <small class="form-text text-danger" *ngIf="FNameRef.errors.required">This field is
+                                required!</small>
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="basic-icon-default-username">Username</label>
+                        <input type="text" class="form-control dt-full-name" id="basic-icon-default-username"
+                            placeholder="Enter Role" name="user-username" [(ngModel)]="username"
+                            [class.error]="newUserForm.submitted && FNameRef.invalid" #FNameRef="ngModel" required
+                            aria-label="Name" aria-describedby="basic-icon-default-username2" />
+                        <span *ngIf="newUserForm.submitted && FNameRef.invalid" class="invalid-form">
+                            <small class="form-text text-danger" *ngIf="FNameRef.errors.required">This field is
+                                required!</small>
+                        </span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="form-label" for="basic-icon-default-email">Email</label>
+                        <input type="text" class="form-control dt-full-name" id="basic-icon-default-email"
+                            placeholder="Enter Role" name="user-email" [(ngModel)]="email"
+                            [class.error]="newUserForm.submitted && FEmail.invalid" #FEmail="ngModel" required
+                            aria-label="Name" aria-describedby="basic-icon-default-email2" />
+                        <span *ngIf="newUserForm.submitted && FEmail.invalid" class="invalid-form">
+                            <small class="form-text text-danger" *ngIf="FEmail.errors.required">This field is
+                                required!</small>
+                        </span>
+                    </div>
+                   
+
+                    <div class="form-group">
+                        <label for="account-new-password">Password</label>
+                        <div class="input-group form-password-toggle input-group-merge">
+                            <input [type]="passwordTextTypeNew ? 'text' : 'password'"  [(ngModel)]="password" id="account-new-password" name="new-password"
+                                class="form-control" placeholder="New Password" />
+                            <div class="input-group-append">
+                                <span class="input-group-text cursor-pointer"><i class="feather font-small-4" [ngClass]="{
+                                                          'icon-eye-off': passwordTextTypeNew,
+                                                          'icon-eye': !passwordTextTypeNew
+                                                        }" (click)="togglePasswordTextTypeNew()"></i></span>
+                                                        <span *ngIf="newUserForm.submitted && FNameRef.invalid" class="invalid-form">
+                                                            <small class="form-text text-danger" *ngIf="FNameRef.errors.required">This field is
+                                                                required!</small>
+                                                        </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="account-retype-new-password">Retype New Password</label>
+                        <div class="input-group form-password-toggle input-group-merge">
+                            <input [type]="passwordTextTypeRetype ? 'text' : 'password'" [(ngModel)]="retypePassword" class="form-control"
+                                id="account-retype-new-password" name="confirm-new-password" placeholder="New Password" />
+                            <div class="input-group-append">
+                                <span class="input-group-text cursor-pointer"><i class="feather font-small-4" [ngClass]="{
+                                                          'icon-eye-off': passwordTextTypeRetype,
+                                                          'icon-eye': !passwordTextTypeRetype
+                                                        }" (click)="togglePasswordTextTypeRetype()"></i></span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                   
+
+                    <div class="form-group">
+                        <div class="demo-inline-spacing form-group">
+    
+                                            <div class="custom-control custom-checkbox" *ngFor="let data of roleList">
+                                              <input  #data  class="custom-control-input" type="checkbox" [value]="data.name" name="datagroup" id="{{data.name}}" (change)="onChange(data.id, $event.target.checked)" >
+                                              <label class="custom-control-label" for="{{data.name}}" >
+                                                {{data.name}}
+                                              </label>
+                                            </div>
+                        </div>
+                                  
+                        </div>
+                    
+
+                    <div class="form-group">
+                        <label class="form-label" for="user-status">Status </label>
+                        <select #status id="user-status" (change)="onSelected(status.value)" class="form-control">
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                    </div>
+
+                  
+                  
+                    
+                        <button type="submit" class="btn btn-primary mr-1" (click)="submit(newUserForm)" rippleEffect>Submit</button>
+                        <button type="reset" class="btn btn-outline-secondary" (click)="toggleSidebar('user-management-sidebar')" rippleEffect>
+                            Cancel
+                        </button>
+                       
+                        <div class="d-flex justify-content-between mt-1">
+                        <a routerLink="/pages/miscellaneous/coming-soon">
+                            <small>Reset Password</small>
+                         </a>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal to add new user Ends-->
+</div>

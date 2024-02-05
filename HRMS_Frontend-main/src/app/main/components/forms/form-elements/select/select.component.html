@@ -1,0 +1,27 @@
+
+     
+      <div class="col-sm-12 col-12">
+        <label class="font-medium-2">Additional Filters</label>
+
+        <div class="form-group">
+          <!-- Add custom Tag -->
+          <ng-select
+            [items]="customTag"
+            [addTag]="true"
+            multiple="true"
+            bindLabel="name"
+            placeholder="Select"
+            [(ngModel)]="SelectTag"
+          >
+            <ng-template ng-label-tmp let-item="item" let-clear="clear">
+              <span class="ng-value-label"> {{ item.name }}</span>
+              <span class="ng-value-icon right" (click)="clear(item)" aria-hidden="true">×</span>
+            </ng-template>
+          </ng-select>
+          <!--/ Add custom Tag -->
+        </div>
+      </div>
+      
+  
+
+  

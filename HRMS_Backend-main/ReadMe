@@ -1,0 +1,166 @@
+README file for the HRMS project:
+
+---
+
+# HRMS Project
+
+This is a Human Resource Management System (HRMS) project built with Python and Django.
+
+## Prerequisites
+
+Before running the project, make sure you have the following requirements met:
+
+1. Python 3.10: Verify that Python 3.10 is installed on your system by running the following command in your terminal:
+   ```
+   python --version
+   ```
+
+2. Django: Check if Django is installed globally by running the following command:
+   ```
+   django-admin --version
+   ```
+
+3. Pip: Ensure that pip, the Python package installer, is installed. You can check its version by running the following command:
+   ```
+   pip --version
+   ```
+
+## Installation
+
+1. Clone the repository to your local machine or download the project files.
+
+2. In your terminal, navigate to the project directory.
+
+3. Install the project dependencies by running the following command:
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Database Configuration
+
+1. Create a MySQL database for the project.
+
+2. Open the `/HRMS_BACKEND/hrms/settings.py` file and update the database configuration under the `DATABASES` section:
+   ```python
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.mysql',
+           'NAME': 'YOUR_DATABASE_NAME',
+           'USER': 'YOUR-USERNAME',
+           'PASSWORD': 'PASSWORD',
+           'HOST': '127.0.0.1',
+           'PORT': '3306',
+           'OPTIONS': {
+               'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+           }
+       }
+   }
+   ```
+
+3. Save the file with the updated configuration.
+
+## Database Migration
+
+1. Apply the database migrations by running the following command:
+   ```
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
+## Running the Project
+
+To run the project locally, execute the following command:
+```
+python manage.py runserver
+```
+
+The project will be accessible at `http://localhost:8000` in your web browser.
+
+---
+
+Make sure to replace `YOUR_DATABASE_NAME`, `YOUR-USERNAME`, and `PASSWORD` in the configuration with your actual database details.
+
+This README file provides instructions for setting up and running the HRMS project on your local machine.
+
+
+
+
+# If you have linux so follow these instructions to run the program
+
+---
+
+# HRMS Project
+
+## Prerequisites
+- Python 3.10 and Django should be installed globally on your PC.
+- Verify if Python 3 is installed by running the following command:
+  ```
+  python3 --version
+  ```
+- Verify if Django is installed globally by running the following command:
+  ```
+  django-admin --version
+  ```
+- Verify if pip is installed by running the following command:
+  ```
+  pip3 --version
+  ```
+
+## Setup Instructions
+1. Create a virtual environment using the following command:
+   ```
+   python3 -m venv /path/to/myenv
+   ```
+
+2. Activate the virtual environment:
+   - For Linux/Mac OS:
+     ```
+     source myenv/bin/activate
+     ```
+   - For Windows:
+     ```
+     myenv\Scripts\activate
+     ```
+
+3. Install project dependencies:
+   ```
+   pip3 install -r requirements.txt
+   ```
+   If the above command doesn't work, try using `sudo` at the beginning of the command.
+
+4. Configure the database:
+   - Create a MySQL database.
+   - Update the configuration in `/HRMS_BACKEND/hrms/settings.py` file as follows:
+
+     ```python
+     DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.mysql',
+             'NAME': 'YOUR_DATABASE_NAME',
+             'USER': 'YOUR-USERNAME',
+             'PASSWORD': 'PASSWORD',
+             'HOST': '127.0.0.1',
+             'PORT': '3306',
+             'OPTIONS': {
+                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+             }
+         }
+     }
+     ```
+
+5. Run database migrations:
+   ```
+   python3 manage.py makemigrations
+   python3 manage.py migrate
+   ```
+
+6. Launch the server:
+   ```
+   python3 manage.py runserver
+   ```
+
+---
+
+Please note that the instructions provided assume a Linux/Mac OS environment. For Windows, the commands may have slight variations. Make sure to adjust accordingly.
+
+This README provides a brief overview of the steps required to set up and run the HRMS project. It's important to have a solid understanding of Python, Django, and database configuration to ensure a smooth setup process.

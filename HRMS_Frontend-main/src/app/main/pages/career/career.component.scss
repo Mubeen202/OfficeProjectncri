@@ -1,0 +1,33 @@
+@import '@core/scss/base/pages/page-faq.scss';
+
+
+
+.heading{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 34px;
+
+    /* 1) Theme Color/Dark */
+
+    color: #4B4B4B;
+}
+
+
+.paragraph-body{
+    position: absolute;
+    width: 924px;
+    height: 66px;
+    left: 275px;
+    top: 571px;
+}
+.paragraph{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+

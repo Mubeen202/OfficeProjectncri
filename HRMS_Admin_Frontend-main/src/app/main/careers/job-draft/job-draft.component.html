@@ -1,0 +1,526 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        
+        <div id="user-profile">
+            
+                <!-- Stats Horizontal Card -->
+                <app-stats-card [statsJobs]="statsJobs"></app-stats-card>
+                <!--/ Stats Horizontal Card -->
+
+            <!-- profile info section -->
+            <section id="profile-info">
+                <div class="row">
+                    <!-- left profile info section -->
+                        <!-- Profile Card -->
+                        <div class="col-lg-4 col-md-12 col-12">
+                           
+                            <div class="card card-profile">
+                               
+                                <div class="card-img-top"></div>
+                                <div class="card-body">
+                                    <div class="profile-image-wrapper">
+                                        <div class="">
+                                            <div class="avatar">
+                                                <div class="avatar bg-light-danger mr-50">
+                                                    <div class="avatar-content-profile" height="240" width="120">{{firstLetter.toUpperCase()  }}{{ secondLetter.toUpperCase() }} </div>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3>{{currentRow.accountManager}}</h3>
+                                  <div class="badge badge-light-primary profile-badge">Hiring Lead</div>
+                                    <hr class="mb-2" />
+                                    <!-- <div class="d-flex flex-column justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-muted font-weight-bolder">Followers</h6>
+                                            <h3 class="mb-0">10.3k</h3>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-muted font-weight-bolder">Projects</h6>
+                                            <h3 class="mb-0">156</h3>
+                                        </div>
+                                        <div>
+                                            <h6 class="text-muted font-weight-bolder">Rank</h6>
+                                            <h3 class="mb-0">23</h3>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Profile Card -->
+                    <!--/ left profile info section -->
+
+                    <!-- center profile info section -->
+                    <div class="col-lg-8 col-12 order-1 order-lg-2">
+                        <div class="row">
+                        
+                            <div class="card">
+                                <div class="card-header container d-flex justify-content-between">
+                                    <h2 class="">Draft </h2>
+                                        <button class="btn btn-primary mr-2 mb-2" (click)="onEditChange(currentRow.id)" type="submit" rippleEffect>
+                                            <span [data-feather]="'edit'" [class]="'mr-25'"></span>
+                                            Edit</button>
+                                </div>
+                               
+                                <hr>
+                            
+                            
+                                <section id="reactive-forms" class="card-body">
+                                    <div class="row">
+                            
+                                        <div class="col-12">
+                            
+                                            <h4 class="card-title">General Information</h4>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <form [formGroup]="ReactiveUserDetailsForm" (ngSubmit)="ReactiveUDFormOnSubmit()">
+                                                            <div class="row">
+
+                                                                <!-- <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="company">Job Title</label>
+                                                                        <input type="text" id="jobtitle" formControlName="jobtitle" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.title"
+                                                                            [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors }" />
+                                                                        <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors"
+                                                                            class="invalid-feedback">
+                                                                            <div *ngIf="ReactiveUDForm.jobtitle.errors.required">Job Title is
+                                                                                required</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="jobtitle">Job Title</label>
+                                                                        <input type="text" id="jobtitle" formControlName="jobtitle" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.title"
+                                                                            [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors }" />
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="email">Contact Us Email</label>
+                                                                        <input type="text" id="email" formControlName="email" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.email"
+                                                                            [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.email.errors }" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="clientName">Tenant</label>
+                                                                        <input type="text" id="clientName" formControlName="clientName" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.companyName" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="department">Department</label>
+                                                                        <input type="text" id="department" formControlName="department" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.department" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="accountManager">Account Manager</label>
+                                                                        <input type="text" id="accountManager" formControlName="accountManager" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.accountManager" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="assignedRecruiter">Assigned Recruiter</label>
+                                                                        <input type="text" id="assignedRecruiter" formControlName="assignedRecruiter" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.assignRecruiter" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                               
+                            
+                                                                <!-- <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="UDCountry">Select Client</label>
+                                                                        <select id="clientName" class="form-control"
+                                                                            #company (change)="companySelected(company.value)"
+                                                                            [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.clientName.errors }">
+                                                                            <option value="currentRow.companyName" disabled selected hidden>{{currentRow.companyName}}</option>
+                                                                            <option *ngFor="let company of companiesList" [value]="company.id">{{company.name}}</option>
+                                                                        </select>
+                                                                        <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.clientName.errors"
+                                                                            class="invalid-feedback">
+                                                                            <div *ngIf="ReactiveUDForm.clientName.errors.required">Client Name is
+                                                                                required
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+                            
+
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="jobType">Job Type</label>
+                                                                        <input type="text" id="jobType" formControlName="jobType" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.jobType" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="jobStatus">Job Status</label>
+                                                                        <input type="text" id="jobStatus" formControlName="jobStatus" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.job_status" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="workExperience">Work Experience</label>
+                                                                        <input type="text" id="workExperience" formControlName="workExperience" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.workExperience" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="salary">Salary</label>
+                                                                        <input type="text" id="salary" formControlName="salary" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.salary" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="skillset">skillset</label>
+                                                                        <input type="text" id="skillset" formControlName="skillset" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.skillSet" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+                            
+                                                               
+                            
+                                                                
+                            
+                            
+                                                               
+                            
+                            
+                                                                <div class="col-12">
+                                                                    <h4 class="card-title">Address Information</h4>
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="location">Location</label>
+                                                                        <input type="text" id="location" formControlName="location" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.location" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+                            
+                                                                <!-- <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="city">City</label>
+                                                                        <input type="text" id="city" formControlName="city" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.city" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="city">Provience</label>
+                                                                        <input type="text" id="city" formControlName="city" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.city" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="country">Country</label>
+                                                                        <input type="text" id="country" formControlName="country" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.country" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+                            
+                                                               
+                            
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="postalCode">Postal Code</label>
+                                                                        <input type="text" id="postalCode" formControlName="postalCode" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.postalCode" />
+                                                                       
+                                                                    </div>
+                                                                </div> -->
+                            
+                                                                <div class="col-12">
+                                                                    <h4 class="card-title">Stats</h4>
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="jobOpening">Number of Job Openings</label>
+                                                                        <input type="text" id="jobOpening" formControlName="jobOpening" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.noOfJobOpening" />
+                                                                       
+                                                                    </div>
+                                                                </div>
+                            
+                            
+                                                                <div class="col-12">
+                                                                    <h4 class="card-title"> Description Information </h4>
+                                                                </div>
+                            
+                                                               
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label for="description">Job Description</label>
+                                                                        <textarea type="textarea" rows="4" id="description" formControlName="description" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.description" ></textarea>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                            
+                            
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label for="requirements">Requirements</label>
+                                                                        <textarea type="textarea" rows="4" id="requirements" formControlName="requirements" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.requirments" ></textarea>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                            
+                            
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label for="jobSummry">Job Summary</label>
+                                                                        <textarea type="textarea" rows="4" id="jobSummry" formControlName="jobSummry" [readonly]="true"
+                                                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.jobSummry" ></textarea>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                            
+                                                                <!-- <div class="col-12">
+                                                                    <h4 class="card-title">Attachment Information</h4>
+                                                                </div> -->
+                            
+                                                                <!-- <div class="col-md-6">
+                                                                    <fieldset class="form-group">
+                                                                        <label for="file-upload-single">Attachment:</label>
+                                                                        <div class="custom-file">
+                                                                            <input type="file" class="custom-file-input" type="file" ng2FileSelect
+                                                                            [(ngModel)]="currentRow.logo" [readonly]="true"
+                                                                                [uploader]="uploader" id="file-upload-single" />
+                                                                            <label class="custom-file-label">Choose file</label>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </div> -->
+                            
+                                                                <div class="col-12 d-flex justify-content-between mt-5">
+                                                                    <h4 class="card-title">Questions</h4>
+                                                                   
+                                                                </div>
+                            
+                                                                <div class="col-12">
+                                                                    <div class="table-responsive border rounded mt-1">
+                                                                        <table class="table bg-light-primary table-borderless">
+                                                                            <tbody>
+                                                                           
+
+                                                                                <tr >
+                                                                                    <td>
+                                                                                            <div class="custom-control custom-checkbox" *ngFor="let data of currentRow.jobsQuestions">
+                                                                                              <input class="custom-control-input" type="checkbox"
+                                                                                               checked="true" >
+                                                                                              <label class="custom-control-label" for="{{data.questionId.question}}" >
+                                                                                                {{data.questionId.question}}
+                                                                                              </label>
+                                                                                            </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="custom-control custom-switch" *ngFor="let data of currentRow.jobsQuestions">
+                                                                                            <input type="checkbox" #data class="custom-control-input" [checked]="data.flag"/>
+                                                                                            <label class="custom-control-label" for="{{data.questionId.question}}">
+                                                                                                <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                                                                <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                                                                            </label>
+                                                                                        </div> 
+                                                                                    </td>
+                                                                                </tr>
+                            
+                            
+                            
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+
+
+                                                                <div class="col-12 d-flex justify-content-between mt-5">
+                                                                    <h4 class="card-title">Factors</h4>
+                                                                   
+                                                                </div>
+                            
+                                                                <div class="col-12">
+                                                                    <div class="table-responsive border rounded mt-1">
+                                                                        <!-- <table class="table bg-light-primary table-borderless">
+                                                                            <tbody>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th></th>
+                                                                                      <th>FACTOR title</th>
+                                                                                      <th>SAMPLE QUESTION</th>
+                                                                                    </tr>
+                                                                                  </thead>
+
+                                                                                <tr *ngFor="let data of currentRow.jobsFactorsQuestions" >
+                                                                                    
+                                                                                                <td> 
+                                                                                                <div class="custom-control custom-checkbox">
+                                                                                                    <input class="custom-control-input" type="checkbox"
+                                                                                                    checked="true" >
+                                                                                                </div>
+                                                                                            </td>
+                                                                                              <td   >
+                                                                                                <label class="custom-control-label" for="{{data.factorId.title}}" >
+                                                                                                    {{data.factorId.title}}
+                                                                                                  </label>
+                                                                                                
+                                                                                              </td>
+                                                                                              <td  for="{{data.factorId.title}}" >
+                                                                                                <label class="custom-control-label" for="{{data.factorId.sampleQuestion}}" >
+                                                                                                    {{data.factorId.sampleQuestion}}
+                                                                                                  </label>
+                                                                                                
+                                                                                              </td>
+                                                                                            
+                                                                                      
+                                                                                   
+                                                                                </tr>
+                            
+                            
+                            
+                                                                            </tbody>
+
+                                                                        </table> -->
+
+                                                                        <table class="table table-hover-animation" >
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <!-- <th></th> -->
+                                                                                  <th>FACTOR title</th>
+                                                                                  <th>SAMPLE QUESTION</th>
+                                                                                </tr>
+                                                                              </thead>
+                                                                            <tbody>
+                                                                              <tr *ngFor="let data of currentRow.jobsFactorsQuestions">
+                                                                                <!-- <td> <input  type="checkbox" [disabled]="true" checked >
+                                                                                </td> -->
+                                                                               <!-- <td> <input  #data class="custom-control-input" type="checkbox" [value]="data.sampleQuestion" name="datagroup"
+                                                                                        id="{{data.sampleQuestion}}" (change)="onChangeFactor(data.id, $event.target.checked)"> </td> -->
+                                                                                <td>{{ data?.factorId?.title }}</td>
+                                                                                <td>{{ data?.factorId?.sampleQuestion }}</td>
+                                                                                <!-- <td>sample question</td> -->
+                            
+                                                                              </tr>
+                                                                            </tbody>
+                                                                          </table>
+                                                                    </div>
+
+                                                                </div>
+                            
+                                                                <div class="col-12 mt-4">
+                                                                    <h4 class="card-title">Publish On Different Job Boards (For Future Use)</h4>
+                                                                </div>
+                            
+                                                                <div class="col-12 bg-light-primary d-flex p-3 flex-column justify-content-start">
+                                                                    <p class="text-body"> Check the box to auto-post this job to the job sites</p>
+                                                                    <div class="cont-main">
+                                                                        <div class="cont-checkbox" *ngFor="let logo of logos; index as i">
+                                                                            <input type="checkbox" [id]="'myCheckbox-' + i" checked />
+                                                                            <label [for]="'myCheckbox-' + i">
+                                                                                <img [src]="logo.img" />
+                                                                                <span class="cover-checkbox">
+                                                                                    <svg viewBox="0 0 12 10">
+                                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                    </svg>
+                                                                                </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                            
+                                                                </div>
+                            
+                                                                <div class="col-12 mt-4">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox" class="custom-control-input" id="acceptance" />
+                                                                        <label class="custom-control-label" for="acceptance">Post through Company's
+                                                                            Profile</label>
+                                                                    </div>
+                                                                </div>
+                            
+                            
+                            
+                            
+                                                                <div class="col-12 mt-5 d-flex justify-content-center">
+                                                                    <div class="form-group">
+                                                                        
+                                                                        <button class="btn btn-primary mr-2 mb-2" type="submit" rippleEffect>
+                                                                            <span [data-feather]="'eye'" [class]="'mr-25'" > </span>
+                                                                            Publish</button>
+                                                                        <button class="btn btn-light mr-2 mb-2" type="reset" rippleEffect>
+                                                                            <span [data-feather]="'x'" [class]="'mr-25'" > </span>
+                                                                            Cancel
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                                        </div>
+                                    </div>
+                                </section>
+                            
+                            
+                            
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ center profile info section -->
+
+                 
+                </div>
+
+              
+            </section>
+            <!--/ profile info section -->
+        </div>
+    </div>
+</div>

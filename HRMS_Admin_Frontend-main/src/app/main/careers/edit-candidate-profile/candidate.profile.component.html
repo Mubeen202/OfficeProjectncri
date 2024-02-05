@@ -1,0 +1,1154 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+
+
+
+    <!-- Modern Vertical Wizard -->
+    <section class="modern-vertical-wizard">
+      <div id="stepper4" class="bs-stepper vertical wizard-modern modern-vertical-wizard-example">
+        <div class="bs-stepper-header">
+          <div class="step" data-target="#account-details-vertical-modern">
+            <button type="button" class="step-trigger">
+              <span class="bs-stepper-box">
+                <i data-feather="file-text" class="font-medium-3"></i>
+              </span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Personal Information</span>
+                <span class="bs-stepper-subtitle">Setup Personal Information</span>
+              </span>
+            </button>
+          </div>
+          <div class="step">
+            <button type="button" class="step-trigger">
+              <span class="bs-stepper-box">
+                <i data-feather="user" class="font-medium-3"></i>
+              </span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Education</span>
+                <span class="bs-stepper-subtitle">Add Education Information</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="step">
+            <button type="button" class="step-trigger">
+              <span class="bs-stepper-box">
+                <i data-feather="file-text" class="font-medium-3"></i>
+              </span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Certification</span>
+                <span class="bs-stepper-subtitle">Add Certification Information</span>
+              </span>
+            </button>
+          </div>
+          <div class="step">
+            <button type="button" class="step-trigger">
+              <span class="bs-stepper-box">
+                <i data-feather="map-pin" class="font-medium-3"></i>
+              </span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Experience</span>
+                <span class="bs-stepper-subtitle">Add Experience</span>
+              </span>
+            </button>
+          </div>
+          <div class="step">
+            <button type="button" class="step-trigger">
+              <span class="bs-stepper-box">
+                <i data-feather="link" class="font-medium-3"></i>
+              </span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Social Links</span>
+                <span class="bs-stepper-subtitle">Add Social Links</span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="bs-stepper-content">
+
+          <!-- <app-file-uploader></app-file-uploader> -->
+
+          <!-- <div class="form-group col-md-6">
+
+            <div class="py-5 mb-3 text-center font-medium-5 text-uppercase file-drop-zone" *ngIf="state==true">
+              <input type="file"  class="custom-file-input" name="fileUploadQuestion"
+              (change)="onFileSelect($event.target.files)"id="customFile" />
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+          </div>
+          <p class="py-5 mb-3 text-center font-medium-5 text-uppercase file-drop-zone" *ngIf="state==false">File path: {{ filePath }}</p> -->
+
+          <h2 class="mb-0">Build a Resume</h2>
+          <p class="py-2 mb-3">Enter your Information</p>
+
+          <h2 class="mb-0 py-2">Personal Information</h2>
+
+          <div id="account-details-vertical-modern" class="content">
+            <!-- header media -->
+            <div class="media">
+              <a href="javascript:void(0);" class="mr-25">
+
+
+               
+                <img *ngIf="imageState === true" [src]="avatarImage" class="rounded mr-50" alt="profile image"
+                  height="76" width="80" />
+              </a>
+              <!-- upload and reset button -->
+              <div class="media-body mt-75 ml-1">
+                <button (click)="file.click()" for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75"
+                  rippleEffect>
+                  Upload
+                </button>
+                <input type="file" #file id="account-upload" hidden accept="image/*" (change)="uploadImage($event)" />
+                <button class="btn btn-sm btn-outline-secondary mb-75" (click)="reset()" rippleEffect>Reset</button>
+                <p>Allowed JPG, GIF or PNG. Max size of 800kbs</p>
+              </div>
+              <!--/ upload and reset button -->
+            </div>
+            <!--/ header media -->
+            <form #accountDetailsForm="ngForm">
+
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="professionalSummery">Professional Summary</label>
+                    <textarea [(ngModel)]="TDProfessionalSummaryVar"  type="textarea"
+                      rows="4"  name="professionalSummery" id="professionalSummery" class="form-control"
+                      placeholder="Tart I love sugar plum I love oat cake. Sweet ⭐️ roll caramels I love jujubes. Topping cake wafer."></textarea>
+                     <!--<span *ngIf="accountDetailsForm.submitted && TDProfessionalSummaryVar.invalid" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="TDProfessionalSummaryVar.errors.required">Professional
+                        Summary is required!</small>
+                    </span> -->
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="firstName">FirstName</label>
+                  <input [(ngModel)]="TDFirstNameVar" #TDFirstNameRef="ngModel" required type="text" name="firstName"
+                    id="firstName" class="form-control"
+                    [class.error]="!TDFirstNameRef.valid && accountDetailsForm.submitted" placeholder="john" />
+                  <span *ngIf="accountDetailsForm.submitted && TDFirstNameRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDFirstNameRef.errors.required">First Name is
+                      required!</small>
+                  </span>
+                </div>
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="lastName">LastName</label>
+                  <input [(ngModel)]="TDLastNameVar" #TDLastName="ngModel" required type="text" name="lastName"
+                    id="lastName" class="form-control" [class.error]="!TDLastName.valid && accountDetailsForm.submitted"
+                    placeholder="Doe" />
+                  <span *ngIf="accountDetailsForm.submitted && TDLastName.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDLastName.errors.required">Last Name is
+                      required!</small>
+                  </span>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="email">Email</label>
+                  <input [(ngModel)]="TDEmailVar" #TDEmailRef="ngModel" required email type="email" name="email"
+                    id="email" class="form-control" [class.error]="!TDEmailRef.valid && accountDetailsForm.submitted"
+                    placeholder="john.doe@email.com" aria-label="john.doe" />
+                  <span *ngIf="accountDetailsForm.submitted" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="!TDEmailRef.valid">Email must be valid!</small>
+                  </span>
+                </div>
+
+
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="lastOrganization">Last Organization</label>
+                  <input [(ngModel)]="TDLastOrganizationVar" #TDLastOrganizationVarRef="ngModel" required type="text"
+                    name="lastOrganization" id="lastOrganization" class="form-control"
+                    [class.error]="!TDLastOrganizationVarRef.valid && accountDetailsForm.submitted"
+                    placeholder="NCRI Solutions" />
+                  <span *ngIf="accountDetailsForm.submitted && TDLastOrganizationVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDLastOrganizationVarRef.errors.required">Last
+                      Organization is required!</small>
+                  </span>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="phoneNumber">Phone Number</label>
+                  <input [(ngModel)]="TDphoneNumberVar" #TDphoneNumberVarRef="ngModel" required type="number"
+                    name="phoneNumber" id="phoneNumber" class="form-control"
+                    [class.error]="!TDphoneNumberVarRef.valid && accountDetailsForm.submitted"
+                    placeholder="090078601" />
+                  <span *ngIf="accountDetailsForm.submitted && TDphoneNumberVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDphoneNumberVarRef.errors.required">Phone Number is
+                      required!</small>
+                  </span>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="address">Address</label>
+                  <input [(ngModel)]="TDaddressVar" #TDaddressVarRef="ngModel" required type="text" name="address"
+                    id="address" class="form-control"
+                    [class.error]="!TDaddressVarRef.valid && accountDetailsForm.submitted"
+                    placeholder="Mr John Smith. 132, My Street, Kingston, New York 12401." />
+                  <span *ngIf="accountDetailsForm.submitted && TDaddressVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDaddressVarRef.errors.required">Address is
+                      required!</small>
+                  </span>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="state">State</label>
+                  <input [(ngModel)]="TDstateVar" #TDstateVarRef="ngModel" required type="text" name="state" id="state"
+                    class="form-control" [class.error]="!TDstateVarRef.valid && accountDetailsForm.submitted"
+                    placeholder="Florida" />
+                  <span *ngIf="accountDetailsForm.submitted && TDstateVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDstateVarRef.errors.required">State is
+                      required!</small>
+                  </span>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="zipCode">Zip Code</label>
+                  <input [(ngModel)]="TDzipCodeVar" #TDzipCodeVarRef="ngModel" required type="text" name="zipCode"
+                    id="zipCode" class="form-control"
+                    [class.error]="!TDzipCodeVarRef.valid && accountDetailsForm.submitted" placeholder="46000" />
+                  <span *ngIf="accountDetailsForm.submitted && TDzipCodeVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDzipCodeVarRef.errors.required">Zip Code is
+                      required!</small>
+                  </span>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="country">Country</label>
+
+
+                  <select class="form-control" (click)="gettingCountry($event.target.value)" [(ngModel)]="TDcountryVar"
+                    #TDcountryVarRef [class.error]="!TDcountryVarRef.valid && accountDetailsForm.submitted">
+
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Russia">Russia</option>
+                    <option value="UK">UK</option>
+                  </select>
+
+                  <span *ngIf="accountDetailsForm.submitted && TDcountryVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDcountryVarRef.errors.required">Country is
+                      required!</small>
+                  </span>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="language">Language</label>
+
+
+                  <select class="form-control" (click)="gettingLanguage($event.target.value)"
+                    [(ngModel)]="TDlanguageVar" #TDlanguageVarRef
+                    [class.error]="!TDlanguageVarRef.valid && accountDetailsForm.submitted">
+
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="Russian">Russian</option>
+                    <option value="German">German</option>
+                  </select>
+
+                  <span *ngIf="accountDetailsForm.submitted && TDlanguageVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDlanguageVarRef.errors.required">Language is
+                      required!</small>
+                  </span>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="currentSalary">Current Salary</label>
+                  <input [(ngModel)]="TDcurrentSalaryVar" #TDcurrentSalaryVarRef="ngModel" required type="text"
+                    name="currentSalary" id="currentSalary" class="form-control"
+                    [class.error]="!TDcurrentSalaryVarRef.valid && accountDetailsForm.submitted" placeholder="3500$" />
+                  <span *ngIf="accountDetailsForm.submitted && TDcurrentSalaryVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDcurrentSalaryVarRef.errors.required">Zip Code is
+                      required!</small>
+                  </span>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="expectedSalary">Expected Salary</label>
+                  <input [(ngModel)]="TDexpectedSalaryVar" #TDexpectedSalaryVarRef="ngModel" required type="text"
+                    name="expectedSalary" id="expectedSalary" class="form-control"
+                    [class.error]="!TDexpectedSalaryVarRef.valid && accountDetailsForm.submitted" placeholder="4000$" />
+                  <span *ngIf="accountDetailsForm.submitted && TDexpectedSalaryVarRef.invalid" class="invalid-form">
+                    <small class="form-text text-danger" *ngIf="TDexpectedSalaryVarRef.errors.required">Expected Salary
+                      is
+                      required!</small>
+                  </span>
+                </div>
+
+
+
+
+
+              </div>
+
+<!-- *********************WORK HISTORY************************** -->
+              <div class="d-flex justify-content-between">
+                <h2 class="mb-0 py-2">Work History</h2>
+
+                <button class="btn btn-sm btn-primary sm"
+                  (click)="modalOpenExperience(experienceModalXL, accountDetailsForm)">
+                  <span class="align-left d-sm-inline-block d-none">+</span>
+                </button>
+
+              </div>
+              <ul class="timeline" *ngFor="let data of experienceData">
+                <li class="timeline-item">
+                  <span class="timeline-point timeline-point-indicator"></span>
+                  <div class="timeline-event">
+                    <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
+                      <h4>{{data.position}}</h4>
+                      <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary" (click)="deleteExperienceRecord(data.id)">
+                          <span class="align-left d-sm-inline-block d-none">x</span>
+                        </button>
+                        <button class="btn btn-primary" (click)="editExperienceRecord(editExperienceModalXL, data)">
+                          <span class="align-left d-sm-inline-block d-none">Edit</span>
+                        </button>
+                      </div>
+                    </div>
+                    <p> {{data.organizationId}}</p>
+                    <p> Feb 2022- Present</p>
+                    <div class="media align-items-center">
+                      <ul>
+                        {{data.descriptions}}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+
+              </ul>
+              <!-- Modal -->
+              <ng-template #experienceModalXL let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel160">Experience</h4>
+                  <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <div class="modal-body" tabindex="0" ngbAutofocus>
+                  <form #educationForm="ngForm" action="#" class="invoice-repeater">
+
+                    <div @heightIn>
+
+                      <div class="row">
+
+                        <div class="form-group col-md-6">
+                          <label class="form-label" for="organization">Organization</label>
+                          <input [(ngModel)]="organization" #organizationRef="ngModel" required type="text"
+                            name="organization" id="organization" class="form-control"
+                            [class.error]="!organizationRef.valid && educationForm.submitted"
+                            placeholder="Ncri Pvt Ltd" />
+                          <span *ngIf="educationForm.submitted && organizationRef.invalid" class="invalid-form">
+                            <small class="form-text text-danger" *ngIf="organizationRef.errors.required">Organization is
+                              required!</small>
+                          </span>
+                        </div>
+
+
+
+
+
+
+                        <div class="form-group col-md-6">
+                          <label for="position">Position</label>
+                          <input type="text" class="form-control" [(ngModel)]="position" name="position" id="position"
+                            placeholder="Mern Stack Developer" />
+
+                        </div>
+
+
+
+
+                      </div>
+
+
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="toDateExperience">Start Date</label>
+
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="toDateExperience" ngbDatepicker #toDate="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="toDate.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="fromDateExperience">End Date</label>
+
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="fromDateExperience" ngbDatepicker #fromDatePicker="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="fromDatePicker.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="descriptionsOfExperience">Description</label>
+                          <textarea type="textarea" rows="4" type="text" class="form-control"
+                            [(ngModel)]="descriptionsOfExperience" name="descriptionsOfExperience"
+                            id="descriptionsOfExperience"
+                            placeholder="write a few lines and describe your thesis project"> </textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary"
+                        (click)="ExperienceSubmit(educationForm); modal.close('Accept click')" rippleEffect>
+                        save
+                      </button>
+
+                      <button type="button" class="btn btn-primary" (click)="modal.close('Accept click')" rippleEffect>
+                        close
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+              </ng-template>
+              <!--Edit Experience Modal -->
+              <ng-template #editExperienceModalXL let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel160">Edit Experience</h4>
+                  <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <div class="modal-body" tabindex="0" ngbAutofocus>
+                  <form #educationForm="ngForm" action="#" class="invoice-repeater">
+
+                    <div @heightIn>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="organization">Organization</label>
+
+
+                          <!-- <select #organization class="form-control" (change)="selectOrganizationChangeHandler($event)"
+                    >   
+                        <option value="editExperienceData.organizationId" disabled selected hidden>{{editExperienceData.organizationId}}</option>
+                        <option *ngFor="let organization of allOrganizations" [value]="organization.id">{{organization.name}}</option>
+                </select> -->
+
+                          <input type="text" class="form-control" [(ngModel)]="editExperienceData.organizationId"
+                            name="organization" id="organization" placeholder="NCRI Pvt Ltd" />
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="position">Position</label>
+                          <input type="text" class="form-control" [(ngModel)]="editExperienceData.position"
+                            name="position" id="position" placeholder="Mern Stack Developer" />
+
+                        </div>
+
+
+                      </div>
+
+
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="toDateExperience">Start Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="editExperienceData.toDate" ngbDatepicker #toDate="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="toDate.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="fromDateExperience">End Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="editExperienceData.fromDate" ngbDatepicker
+                                  #fromDatePicker="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="fromDatePicker.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="descriptionsOfExperience">Description</label>
+                          <textarea type="textarea" rows="4" type="text" class="form-control"
+                            [(ngModel)]="editExperienceData.descriptions" name="descriptionsOfExperience"
+                            id="descriptionsOfExperience"
+                            placeholder="write a few lines and describe your thesis project"> </textarea>
+
+
+
+                        </div>
+                      </div>
+
+
+
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="editSaveExperienceRecord(editExperienceData)"
+                    rippleEffect>
+                    save
+                  </button>
+
+                  <button type="button" class="btn btn-primary"
+                    (click)="editSaveExperienceRecord(editExperienceData); modal.close('Accept click')" rippleEffect>
+                    save and close
+                  </button>
+                </div>
+              </ng-template>
+
+
+
+
+
+<!-- *********************EDUCATION************************** -->
+
+              <div class="d-flex justify-content-between">
+                <h2 class="mb-0 py-2">Education</h2>
+
+                <button class="btn  rounded-circle  btn-primary  " (click)="modalOpenXL(modalXL, accountDetailsForm)">
+                  <span [data-feather]="'plus'"></span></button>
+
+              </div>
+              <ul class="timeline" *ngFor="let data of educationData">
+
+                <li class="timeline-item">
+
+                  <span class="timeline-point timeline-point-indicator"></span>
+                  <div class="timeline-event">
+                    <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
+                      <h4>{{data.degreeName}}</h4>
+                      <div class="d-flex justify-content-between">
+                        <a class="d-flex align-items-center"
+                        (click)="editEducationRecord(editModalXL, data.id)">
+                          <span [data-feather]="'edit-2'" class="align-left d-md-inline-block d-none mr-50"></span>
+                      </a>
+                        <button class="btn btn-flat-secondary" (click)="deleteEducationRecordPopUp(deleteModalXL,data.id)">
+                          <span class="align-left d-md-inline-block d-none">x</span>
+                        </button>
+                        
+
+                    
+                      </div>
+                    </div>
+                    <p> {{data.educationType}}</p>
+                    <p> Sep 2016- Aug 2020</p>
+                    <div class="media align-items-center">
+                      <ul>
+                        <li>{{data.descriptions}} </li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+              <!-- Modal -->
+              <ng-template #modalXL let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel160">Education</h4>
+                  <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <div class="modal-body" tabindex="0" ngbAutofocus>
+                  <form #educationForm="ngForm" action="#" class="invoice-repeater">
+
+                    <div @heightIn>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="educationType">Degree Type</label>
+                          <input type="text" class="form-control" [(ngModel)]="educationType" name="educationType"
+                            id="educationType" placeholder="Bachelor's Degree" />
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="institutionName">School Name</label>
+                          <input type="text" class="form-control" [(ngModel)]="institutionName" name="institutionName"
+                            id="institutionName" placeholder="Air University" />
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="degreeName">Major</label>
+                          <input type="text" class="form-control" [(ngModel)]="degreeName" name="degreeName"
+                            id="degreeName" placeholder="Bachelor of Science  Computer Science" />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="toDate">Start Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="toDate" ngbDatepicker #i18nDP="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="i18nDP.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="fromDate">End Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="fromDate" ngbDatepicker #fromDatePicker="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="fromDatePicker.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="descriptions">Description</label>
+                          <textarea type="textarea" rows="4" type="text" class="form-control" [(ngModel)]="descriptions"
+                            name="descriptions" id="descriptions"
+                            placeholder="write a few lines and describe your thesis project"> </textarea>
+
+
+
+                        </div>
+                      </div>
+                      <div class="col-md-2 col-12 mb-50">
+                        <div class="form-group">
+                          <button *ngIf="i>0==true" class="btn btn-outline-danger text-nowrap px-1"
+                            (click)="deleteItem(i)" rippleEffect>
+                            <i data-feather="x" class="mr-25"></i>
+                            <span>Delete</span>
+                          </button>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="EducationSubmit(); modal.close('Accept click')"
+                    rippleEffect>
+                    save
+                  </button>
+
+                  <button type="button" class="btn btn-primary" (click)="modal.close('Accept click')" rippleEffect>
+                    close
+                  </button>
+                </div>
+              </ng-template>
+              <!--Edit Education Modal -->
+              <ng-template #editModalXL let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel160">Edit Education</h4>
+                  <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <div class="modal-body" tabindex="0" ngbAutofocus>
+                  <form #educationForm="ngForm" action="#" class="invoice-repeater">
+
+                    <div @heightIn>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="educationType">Degree Type</label>
+                          <input type="text" class="form-control" [(ngModel)]="editEducationData.educationType"
+                            name="educationType" id="educationType" placeholder="Bachelor's Degree" />
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="institutionName">School Name</label>
+                          <input type="text" class="form-control" [(ngModel)]="editEducationData.institutionName"
+                            name="institutionName" id="institutionName" placeholder="Air University" />
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="degreeName">Major</label>
+                          <input type="text" class="form-control" [(ngModel)]="editEducationData.degreeName"
+                            name="degreeName" id="degreeName" placeholder="Bachelor of Science  Computer Science" />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="toDate">Start Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="editEducationData.toDate" ngbDatepicker #i18nDP="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="i18nDP.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="fromDate">End Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="editEducationData.fromDate" ngbDatepicker
+                                  #fromDatePicker="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="fromDatePicker.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="descriptions">Description</label>
+                          <textarea type="textarea" rows="4" type="text" class="form-control"
+                            [(ngModel)]="editEducationData.descriptions" name="descriptions" id="descriptions"
+                            placeholder="write a few lines and describe your thesis project"> </textarea>
+
+
+
+                        </div>
+                      </div>
+
+
+
+                    </div>
+                    <button type="button" (click)="deleteEducationRecordPopUp(deleteModalXL,editEducationData.id)" class="btn btn-flat-danger" rippleEffect>Delete this education record</button>
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="editSaveEducationRecord(editEducationData)"
+                    rippleEffect>
+                    save
+                  </button>
+
+                  <button type="button" class="btn btn-primary"
+                    (click)="editSaveEducationRecord(editEducationData); modal.close('Accept click')" rippleEffect>
+                    save and close
+                  </button>
+                </div>
+              </ng-template>
+
+                <!--Delete Education Modal -->
+                <ng-template #deleteModalXL let-modal>
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel160">Delete Education Record</h4>
+                    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+  
+  
+                  
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" (click)="deleteEducationRecord(); modal.close('Accept click')"
+                      rippleEffect>
+                      delete
+                    </button>
+  
+                    <button type="button" class="btn btn-outline-secondary"
+                      (click)="modal.close('Accept click')" rippleEffect>
+                      cancel
+                    </button>
+                  </div>
+                </ng-template> 
+
+
+
+<!-- *********************CERTIFICATION************************** -->
+
+              <div class="d-flex justify-content-between">
+                <h2 class="mb-0 py-2">Certification</h2>
+
+                <button class="btn btn-sm btn-primary sm"
+                  (click)="modalOpenCertification(certificateModalXL, accountDetailsForm)">
+                  <span class="align-left d-sm-inline-block d-none">+</span>
+                </button>
+
+              </div>
+              <ul class="timeline" *ngFor="let data of certificateData">
+                <li class="timeline-item">
+                  <span class="timeline-point timeline-point-indicator"></span>
+                  <div class="timeline-event">
+                    <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
+                      <h4>{{data.certificateName}}</h4>
+                      <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary" (click)="deleteCertificationRecord(data.id)">
+                          <span class="align-left d-sm-inline-block d-none">x</span>
+                        </button>
+                        <button class="btn btn-primary"
+                          (click)="editCertificationRecord(editCertificationModalXL, data)">
+                          <span class="align-left d-sm-inline-block d-none">Edit</span>
+                        </button>
+                      </div>
+                    </div>
+                    <p> {{data.certificateType}}</p>
+                    <p> Sep 2022- Oct 2022</p>
+                    <div class="media align-items-center">
+                      <ul>
+                        {{data.descriptions}}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- Modal -->
+              <ng-template #certificateModalXL let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel160">Experience</h4>
+                  <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <div class="modal-body" tabindex="0" ngbAutofocus>
+                  <form #educationForm="ngForm" action="#" class="invoice-repeater">
+
+                    <div @heightIn>
+
+                      <div class="row">
+
+
+                        <div class="form-group col-md-6">
+                          <label for="certificateType">Certificate Type</label>
+                          <input type="text" class="form-control" [(ngModel)]="certificateType" name="certificateType"
+                            id="certificateType" placeholder="Google Cloud" />
+
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="certificateName">Certificate Name</label>
+                          <input type="text" class="form-control" [(ngModel)]="certificateName" name="certificateName"
+                            id="certificateName" placeholder="Google Cloud Engineer" />
+
+                        </div>
+
+
+                      </div>
+
+
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="toDateCertificate">Start Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="toDateCertificate" ngbDatepicker #toDate="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="toDate.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="fromDateCertificate">End Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="fromDateCertificate" ngbDatepicker #fromDatePicker="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="fromDatePicker.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="descriptionsOfCertification">Description</label>
+                          <textarea type="textarea" rows="4" type="text" class="form-control"
+                            [(ngModel)]="descriptionsOfCertification" name="descriptionsOfCertification"
+                            id="descriptionsOfCertification"
+                            placeholder="write a few lines and describe your thesis project"> </textarea>
+
+
+
+                        </div>
+                      </div>
+
+
+
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary"
+                    (click)="CertificationSubmit(); modal.close('Accept click')" rippleEffect>
+                    Save
+                  </button>
+
+                  <button type="button" class="btn btn-primary" (click)="modal.close('Accept click')" rippleEffect>
+                    Close
+                  </button>
+                </div>
+              </ng-template>
+
+              <!--Edit Experience Modal -->
+              <ng-template #editCertificationModalXL let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel160">Edit Certification</h4>
+                  <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <div class="modal-body" tabindex="0" ngbAutofocus>
+                  <form #educationForm="ngForm" action="#" class="invoice-repeater">
+
+                    <div @heightIn>
+
+                      <div class="row">
+
+
+                        <div class="form-group col-md-6">
+                          <label for="certificateType">Certificate Type</label>
+                          <input type="text" class="form-control" [(ngModel)]="editCertificationData.certificateType"
+                            name="certificateType" id="certificateType" placeholder="Google Cloud" />
+
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="certificateName">Certificate Name</label>
+                          <input type="text" class="form-control" [(ngModel)]="editCertificationData.certificateName"
+                            name="certificateName" id="certificateName" placeholder="Google Cloud Engineer" />
+
+                        </div>
+
+
+                      </div>
+
+
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="toDateCertificate">Start Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="editCertificationData.toDate" ngbDatepicker #toDate="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="toDate.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="fromDateCertificate">End Date</label>
+                          <!-- i18n Date Picker -->
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="i18n Date Picker"
+                                  [(ngModel)]="editCertificationData.fromDate" ngbDatepicker
+                                  #fromDatePicker="ngbDatepicker" />
+
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="fromDatePicker.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                          <!--/ i18n Date Picker -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="descriptionsOfCertification">Description</label>
+                          <textarea type="textarea" rows="4" type="text" class="form-control"
+                            [(ngModel)]="editCertificationData.descriptions" name="descriptionsOfCertification"
+                            id="descriptionsOfCertification"
+                            placeholder="write a few lines and describe your thesis project"> </textarea>
+
+
+
+                        </div>
+                      </div>
+
+
+
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary"
+                    (click)="editSaveCertificationRecord(editCertificationData)" rippleEffect>
+                    save
+                  </button>
+
+                  <button type="button" class="btn btn-primary"
+                    (click)="editSaveCertificationRecord(editCertificationData); modal.close('Accept click')"
+                    rippleEffect>
+                    save and close
+                  </button>
+                </div>
+              </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="d-flex justify-content-center">
+
+                <button class="btn btn-primary btn-next" (click)="accountDataFormNext(accountDetailsForm)" type="submit"
+                  rippleEffect>
+                  <span class="align-middle d-sm-inline-block d-none">Proceed</span>
+                  <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
+                </button>
+              </div>
+
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Modern Vertical Wizard -->
+  </div>
+</div>

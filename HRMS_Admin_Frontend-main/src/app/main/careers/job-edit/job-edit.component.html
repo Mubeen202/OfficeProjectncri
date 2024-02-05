@@ -1,0 +1,942 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- User List -->
+        <section class="users-list-wrapper">
+
+
+            <!-- Stats Horizontal Card -->
+            <app-stats-card [statsJobs]="statsJobs"></app-stats-card>
+            <!--/ Stats Horizontal Card -->
+
+
+            <div class="card">
+                <h2 class="card-header">Edit Job </h2>
+                <hr>
+               
+               
+<section id="reactive-forms" class="card-body">
+    <div class="row">
+       
+        <div class="col-12">
+         
+                <h4 class="card-title">General Information</h4>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <form [formGroup]="ReactiveUserDetailsForm" (ngSubmit)="ReactiveUDFormOnSubmit()">
+                              <div class="row">
+
+
+                                <!-- <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="company">Job Title</label>
+                                        <input type="text" id="jobtitle" formControlName="jobtitle" [readonly]="true"
+                                            placeholder="Enter Job Title" class="form-control" [(ngModel)]="currentRow.title"
+                                            [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors }" />
+                                        <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="ReactiveUDForm.jobtitle.errors.required">Job Title is
+                                                required</div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="jobtitle">Job Title</label>
+                                            <input type="text" id="jobtitle" formControlName="jobtitle"
+                                            placeholder="Enter Job Title"
+                                                class="form-control"
+                                                [(ngModel)]="currentRow.title"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors }" />
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.jobtitle.errors.required">Job Title is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                  
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email">Contact Us Email</label>
+                                            <input type="text" id="email" formControlName="email" class="form-control"
+                                            [(ngModel)]="currentRow.email"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.email.errors }" />
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.email.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.email.errors.required">Email is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                              
+                                  
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="UDCountry">Select Tenant</label>
+                                            <select #clientName id="clientName" class="form-control"
+                                                (change)="selectClientChangeHandler(clientName.value)"
+                                                >
+                                                <option value="currentRow.companyName" disabled selected hidden>{{currentRow.companyName}}</option>
+                                                <option *ngFor="let clientName of companiesList" [value]="clientName.id">{{clientName.name}}</option>
+                                            
+                                            </select>
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.clientName.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.clientName.errors.required">Client Name is required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="departmentStatus==false"  class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="department">Department </label>
+                                            <select #department id="department"  class="form-control"
+                                            (change)="selectDepartmentChangeHandler(department.value)"
+                                             >
+
+                                             <option value="currentRow.department" disabled selected hidden>{{currentRow.department}}</option>
+                                             <option *ngFor="let department of departList" [value]="department.id">{{department.name}}</option>
+                                         
+                                                </select>
+                                          
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.department.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.department.errors.required">Department is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="departmentStatus==true" class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="department">Department </label>
+                                            <select  id="department" formControlName="department" class="form-control"
+                                            (change)="selectDepartmentChangeHandler($event.target.value)"
+                                             [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.department.errors }" >
+                                             <!-- <option default="true">Select Department</option> -->
+                                             <option value="">Select Department</option>
+                                             
+                                             <option *ngFor="let company1 of departList" [value]="company1.id">{{company1.name}}</option>
+                                                </select>
+                                          
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.department.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.jobType.errors.required">Department is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="accountManager">Account Manager </label>
+
+                                            <select #accountManager id="accountManager"  class="form-control"
+                                            (change)="selectManagerChangeHandler(accountManager.value)"
+
+                                             >
+
+                                             <option value="currentRow.accountManager" disabled selected hidden>{{currentRow.accountManager}}</option>
+                                             <option *ngFor="let accManager of manager" [value]="accManager.id">{{accManager.full_name}}</option>
+                                         
+                                                </select>
+                                          
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.department.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.jobType.errors.required">Department is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="assignedRecruiter">Assigned Recruiter </label>
+                                            <select #assignedRecruiter id="assignedRecruiter"  class="form-control"
+                                            (change)="selectRecruiterChangeHandler(assignedRecruiter.value)">
+                                             <option value="currentRow.assignedRecruiter" disabled selected hidden>{{currentRow.assignRecruiter}}</option>
+                                             <option *ngFor="let assignedRecruiter of recruiter" [value]="assignedRecruiter.id">{{assignedRecruiter.full_name}}</option>
+                                         
+                                                </select>
+                                          
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.assignedRecruiter.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.assignedRecruiter.errors.required">Assigned Recruiter is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                  
+
+
+
+
+                                    <!-- <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="department">Department</label>
+                                            <select #department id="department"  class="form-control"
+                                            (change)="selectDepartmentChangeHandler(department.value)"
+                                             [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.department.errors }" >
+
+                                             <option value="currentRow.department" disabled selected hidden>{{currentRow.department}}</option>
+                                             <option *ngFor="let department of departList" [value]="department.id">{{department.name}}</option>
+                                         
+                                                </select>
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.department.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.department.errors.required">Job Type is required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    
+                                    
+
+
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="jobType">Job Type</label>
+                                            <select #JobType id="jobType" formControlName="jobType" class="form-control"
+                                            [(ngModel)]="currentRow.jobType"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobType.errors }" (click)="onJobType($event)">
+                                                <option value="full_time">Full Time</option>
+                                                <option value="part_time">Part Time</option>
+                                                <option value="contract">Contract</option>
+                                            </select>
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobType.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.jobType.errors.required">Job Type is required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                   
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="jobStatus">Job Status</label>
+                                            <input type="text" id="jobStatus" formControlName="jobStatus" placeholder="Job Status" class="form-control"
+                                                [(ngModel)]="currentRow.job_status"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobStatus.errors }" />
+
+                                                <select #jobStatus id="jobStatus" formControlName="jobStatus" class="form-control"
+                                                [(ngModel)]="currentRow.job_status"
+                                                    [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobStatus.errors }" (click)="onjobStatus($event)">
+                                                        <option value="Approved">Approved</option>
+                                                        <option value="Inreview ">Inreview</option>
+                                                        <option value="Ready For Posting">Ready For Posting</option>
+                                                </select>
+
+                                                <!-- <select #jobStatus id="jobStatus" formControlName="jobStatus" class="form-control"
+                                                    [(ngModel)]="currentRow.job_status"
+                                                        [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobStatus.errors }" (click)="onJobStatus($event)">
+                                                        <option value="Approved">Approved</option>
+                                                        <option value="Inreview ">Inreview</option>
+                                                        <option value="Ready For Posting">Ready For Posting</option>
+                                            </select> -->
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobStatus.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.jobStatus.errors.required">Job Status is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="UDPhoneNumber">Phone Number</label>
+                                            <input type="text" id="UDPhoneNumber" formControlName="phoneNumber" class="form-control"
+                                            placeholder="Phone Number" [(ngModel)]="currentRow.contactNumber"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.phoneNumber.errors }"/>
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.phoneNumber.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.phoneNumber.errors.required">Phone Number is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="workExperience">Work Experience</label>
+                                            <input type="text" id="workExperience" formControlName="workExperience" placeholder="Work Experience" class="form-control"
+                                            [(ngModel)]="currentRow.workExperience"
+                                            [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.workExperience.errors }" />
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.workExperience.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.workExperience.errors.required">Work Experience is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="salary">Salary </label>
+                                            <input type="text" id="salary" formControlName="salary" placeholder="Salary "
+                                                class="form-control" [(ngModel)]="currentRow.salary"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.salary.errors }" />
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.salary.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.salary.errors.required">Salary is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="UDSkillsSet">Skill Set</label>
+                                            <input type="text" id="UDSkillsSet" formControlName="skillset"
+                                                class="form-control" [(ngModel)]="currentRow.skillSet"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.skillset.errors }" />
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.skillset.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.skillset.errors.required">Skill set is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="col-12">
+                                        <h4 class="card-title">Address Information</h4>
+                                    </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="UDLocation">Location</label>
+                                      
+
+                                        <select #location id="location"  class="form-control"
+                                        (change)="locationFunction($event)">
+                                         >
+
+                                         <option value="currentRow.location" disabled selected hidden>{{currentRow.location}}</option>
+                                         <option *ngFor="let location of deptLocation" [value]="location"  >{{location}}</option>
+                                          
+                                            </select>
+                                        <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.location.errors" class="invalid-feedback">
+                                            <div *ngIf="ReactiveUDForm.location.errors.required">Location is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            
+                                   
+                                    <!-- <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="UDLanguage">Language</label>
+                                            <select id="UDLanguage" formControlName="language" class="form-control"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.language.errors }">
+                                                <option selected value="English">English</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="French">French</option>
+                                                <option value="Portuguese">Portuguese</option>
+                                            </select>
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.language.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.language.errors.required">language is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                
+                                   
+
+                                    <div class="col-12">
+                                        <h4 class="card-title">Stats</h4>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="UDJobOpenings">Number of Job Openings</label>
+                                            <input type="number" id="UDJobOpenings" formControlName="jobOpening" class="form-control"
+                                            [(ngModel)]="currentRow.noOfJobOpening"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobOpening.errors }" />
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobOpening.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.jobOpening.errors.required">Postal Code is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <h4 class="card-title"> Description Information </h4>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="UDJobDescriptions">Job Description</label>
+                                            <textarea type="textarea" rows="4" [(ngModel)]="currentRow.description" id="UDJobDescriptions" formControlName="descriptions" class="form-control"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.descriptions.errors }"> </textarea>
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.descriptions.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.descriptions.errors.required">Job Description is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="UDRequirements">Requirements</label>
+                                            <textarea type="textarea" rows="4" id="UDRequirements" [(ngModel)]="currentRow.requirments" formControlName="requirements" class="form-control"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.requirements.errors }"> </textarea>
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.requirements.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.requirements.errors.required">Job Description is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="UDJobSummery">Job Summary</label>
+                                            <textarea type="textarea" rows="4" id="UDJobSummery" [(ngModel)]="currentRow.jobSummry" formControlName="jobSummery" class="form-control"
+                                                [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobSummery.errors }"> </textarea>
+                                            <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobSummery.errors" class="invalid-feedback">
+                                                <div *ngIf="ReactiveUDForm.jobSummery.errors.required">Job Summary is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+<!-- 
+                                    <div class="col-12">
+                                        <h4 class="card-title">Attachment Information</h4>
+                                    </div> -->
+
+                                   
+
+                                    <div class="col-12 d-flex justify-content-between mt-5">
+                                        <h4 class="card-title">Questions</h4>
+                                        <div class="form-group">
+                                            <button type="button"  (click)="modalOpenJobQuestion(jobQuestionCreationModalXL)" class="btn btn-primary" rippleEffect>Add New Question</button>
+                                        </div>
+                                    </div>
+
+                                  
+                                    <div class="col-12 bg-light-primary p-2 mt-1">
+                                        <div class="row">
+                                            <div class="col-4 mb-2 d-flex justify-content-between" *ngFor="let data of checkboxArray" >
+                                        
+                                            
+                                                <div class="custom-control custom-checkbox" >
+                                                    <input  #data  class="custom-control-input" [checked]="data.selected" type="checkbox"  [value]="data.id" name="datagroup" id="{{data.question}}"  (change)="onChange($event)">
+                                                    <label class="custom-control-label" for="{{data.question}}" >
+                                                      {{data.question}}
+                                                    </label>
+    
+                                                    </div>
+
+
+                                                <div class="custom-control custom-switch" >
+                                                <input type="checkbox" [checked]="data.flag" (change)="onChangeRequried(data.id, $event.target.checked)" class="custom-control-input" id="{{data.id}}"/>
+                                                <label class="custom-control-label" for="{{data.id}}">
+                                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                                    </label>
+                                                </div>
+
+                                           
+                                           
+                                                </div>
+
+                                        </div>
+                                    </div>
+
+                                     <!-- JOB QUESTIONS Modal  -->
+                                     <ng-template #jobQuestionCreationModalXL let-modal>
+                                        <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel160">Add New Questions</h4>
+                                        <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+
+
+                                        <div class="modal-body" tabindex="0" ngbAutofocus>
+                                        <form #educationForm="ngForm" action="#" class="invoice-repeater">
+
+                                            <div @heightIn>
+
+                                            <!-- <div class="row">
+
+                                                <div class="form-group col-md-6">
+                                                <label class="form-label" for="organization">Organization</label>
+                                                <input [(ngModel)]="organization" #organizationRef="ngModel" required type="text"
+                                                    name="organization" id="organization" class="form-control"
+                                                    [class.error]="!organizationRef.valid && educationForm.submitted"
+                                                    placeholder="Ncri Pvt Ltd" />
+                                                <span *ngIf="educationForm.submitted && organizationRef.invalid" class="invalid-form">
+                                                    <small class="form-text text-danger" *ngIf="organizationRef.errors.required">Organization is
+                                                    required!</small>
+                                                </span>
+                                                </div>
+                                            </div> -->
+
+                                            <!-- center profile info section -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                
+                
+                
+                        <div class="d-flex align-content-center justify-content-center flex-column w-100 card-body">
+                          
+
+                            <div class="col-12">
+                                <form [formGroup]="ReactiveUserDetailsForm" (ngSubmit)="ReactiveUDFormOnSubmit()">
+                                    <div class="row">
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="UDCountry">Select Question Type</label>
+                                                <select id="UDCountry" formControlName="country" class="form-control" (click)="chooseField($event)"
+                                                    [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.question.errors }">
+                                                    <option value="text">Text</option>
+                                                    <option value="radio">Yes/No</option>
+                                                    <option value="checkbox">Multiple Choice Questions</option>
+                                                    <option value="upload">File Upload</option>
+                                                </select>
+                                                <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.question.errors" class="invalid-feedback">
+                                                    <div *ngIf="ReactiveUDForm.question.errors.required">questions is required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                       
+                            
+                                     
+                                    </div>
+
+                                    
+                                </form>
+                            </div>
+
+                            <form (ngSubmit)="(textQuestionForm.form.valid)" #textQuestionForm="ngForm">
+                                <div *ngIf="selectedValue == 'text' " class="wrapper mt-2 bg-light-primary">
+                                    <!-- <div class="d-flex justify-content-between mt-2 col-12">
+                                        <h4 class="card-title">Text</h4>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="textcheckbox" />
+                                            <label class="custom-control-label" (click)="onHandleRequired(Pname)" id="values" for="textcheckbox">
+                                                <span class="switch-icon-left" data-ng-bind="true" #Pname><i data-feather="check"></i></span>
+                                                <span class="switch-icon-right" [value]="false" #Pname><i data-feather="x"></i></span>
+                                            </label>
+                                        </div>
+                                    </div> -->
+                                    <div class="form-group col-lg-12 col-sm-12 col-md-12 ">
+                                            <input
+                                              type="text"
+                                              id="basic-icon-default-uname"
+                                              class="form-control dt-uname"
+                                              placeholder="Type your question here"
+                                              aria-label="jdoe1"
+                                              aria-describedby="basic-icon-default-uname2"
+                                              name="text"
+                                              [(ngModel)]="text"
+                                              [class.error]="textQuestionForm.submitted && FUserNameRef.invalid"
+                                              #FUserNameRef="ngModel"
+                                              required
+                                            />
+                                        <div class="custom-control custom-checkbox mt-2">
+                                            <input type="checkbox" class="custom-control-input" id="enableupload" checked />
+                                            <label class="custom-control-label" for="enableupload">Enable Text</label>
+                                        </div>
+    
+                                       
+                                    </div>
+    
+                                   
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                        (click)="submitText(textQuestionForm); modal.close('Accept click')" type="submit"rippleEffect>
+                                            <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                            save
+                                        </button>
+    
+                                        <button type="button" class="btn btn-outline-secondary" (click)="close();modal.close('Accept click')" rippleEffect>
+                                            close
+                                        </button>
+                                        </div>
+                                </div>
+
+                                
+    
+                            </form>
+
+
+                            <form (ngSubmit)="(checkboxQuestionForm.form.valid)" #checkboxQuestionForm="ngForm">
+                                <div *ngIf="selectedValue == 'checkbox' " class="wrapper mt-2 bg-light-primary" style="margin: top 5rem;">
+                                    
+                                    <div class="form-group col-lg-12 col-sm-12 col-md-12 ">
+                                            <input
+                                              type="text"
+                                              id="basic-icon-default-uname"
+                                              class="form-control dt-uname"
+                                              placeholder="Type your question here"
+                                              aria-label="jdoe1"
+                                              aria-describedby="basic-icon-default-uname2"
+                                              name="text"
+                                              [(ngModel)]="text"
+                                              [class.error]="checkboxQuestionForm.submitted && FUserNameRef.invalid"
+                                              #FUserNameRef="ngModel"
+                                              required
+                                            />
+
+                                            <form action="#" class="invoice-repeater">
+                                                <div *ngFor="let item of multipleValues; let i = index" @heightIn>
+                                                <div class="row d-flex align-items-end">
+                                                    <div class="col-md-4 col-12">
+                                                    <div class="form-group">
+                                                        <label for="value{{ i }}">Response Option</label>
+                                                        <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        [(ngModel)]="item.value"
+                                                        name="value{{ i }}"
+                                                        id="value{{ i }}"
+                                                        placeholder="Value "
+                                                        />
+                                                    </div>
+                                                    </div>
+                                            
+                                                
+                                            
+                                                    <div class="col-md-2 col-12 mb-50">
+                                                    <div class="form-group">
+                                                        <button class="btn btn-outline-danger text-nowrap px-1" (click)="deleteItem(i)" rippleEffect>
+                                                        <i data-feather="x" class="mr-25"></i>
+                                                        <span>Delete</span>
+                                                        </button>
+                                                    </div>
+                                                    </div>
+    
+                                                    
+    
+                                                    
+                                                </div>
+                                                <hr />
+                                                </div>
+                                            </form>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <button class="btn btn-outline-primary text-nowrap px-1" type="button" (click)="addItem()" rippleEffect>
+                                                        <i data-feather="plus" class="mr-25"></i>
+                                                        <span>Add New</span>
+                                                    </button>
+                                                    </div>
+                                            </div>
+                                           
+                                     
+    
+                                          </div>
+    
+                                   
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                        (click)="submitCheckbox(checkboxQuestionForm); modal.close('Accept click')" type="submit"rippleEffect>
+                                            <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                            save
+                                        </button>
+    
+                                        <button type="button" class="btn btn-outline-secondary" (click)="close();modal.close('Accept click')" rippleEffect>
+                                            close
+                                        </button>
+                                        </div>
+                                </div>
+
+                                
+    
+                            </form>
+
+                            <form (ngSubmit)="(radioQuestionForm.form.valid)" #radioQuestionForm="ngForm">
+                            <div *ngIf="selectedValue == 'radio'"class="wrapper bg-light-primary">
+                                <div class="d-flex justify-content-between mt-2 col-12">
+                                    <h4 class="card-title">Yes/No</h4>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="resumecheckbox" />
+                                        <label class="custom-control-label" for="resumecheckbox">
+                                            <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                            <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-12 col-sm-12 col-md-12 ">
+                              
+                                    <input
+                                          type="text"
+                                          id="basic-icon-default-uname"
+                                          class="form-control dt-uname"
+                                          placeholder="Type your question here"
+                                          aria-label="jdoe1"
+                                          aria-describedby="basic-icon-default-uname2"
+                                          name="text"
+                                          [(ngModel)]="text"
+                                          [class.error]="radioQuestionForm.submitted && FUserNameRef.invalid"
+                                          #FUserNameRef="ngModel"
+                                          required
+                                        />
+                                    <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors" class="invalid-feedback">
+                                        <div *ngIf="ReactiveUDForm.jobtitle.errors.required">Job Title is
+                                            required</div>
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary"
+                                    (click)="submitRadio(radioQuestionForm); modal.close('Accept click')" type="submit"rippleEffect>
+                                        <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                        save
+                                    </button>
+
+                                    <button type="button" class="btn btn-outline-secondary" (click)="close();modal.close('Accept click')" rippleEffect>
+                                        close
+                                    </button>
+                                    </div>
+                                
+                            </div>
+                            </form>
+
+
+
+                            <form (ngSubmit)="(uploadQuestionForm.form.valid)" #uploadQuestionForm="ngForm">
+                            <div *ngIf="selectedValue == 'upload' " class="wrapper mt-2 bg-light-primary" style="margin: top 5rem;">
+                                <div class="d-flex justify-content-between mt-2 col-12">
+                                    <h4 class="card-title">File Upload</h4>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="resumecheckbox" />
+                                        <label class="custom-control-label" for="resumecheckbox">
+                                            <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                            <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-12 col-sm-12 col-md-12 ">
+                                   
+                                        <input
+                                          type="text"
+                                          id="basic-icon-default-uname"
+                                          class="form-control dt-uname"
+                                          placeholder="Type your question here"
+                                          aria-label="jdoe1"
+                                          aria-describedby="basic-icon-default-uname2"
+                                          name="text"
+                                          [(ngModel)]="text"
+                                          [class.error]="uploadQuestionForm.submitted && FUserNameRef.invalid"
+                                          #FUserNameRef="ngModel"
+                                          required
+                                        />
+
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="enableupload" checked />
+                                        <label class="custom-control-label" for="enableupload">Enable File Upload</label>
+                                    </div>
+
+                                  
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary"
+                                    (click)="submitUpload(uploadQuestionForm); modal.close('Accept click')" type="submit"rippleEffect>
+                                        <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                        save
+                                    </button>
+
+                                    <button type="button" class="btn btn-outline-secondary" (click)="close();modal.close('Accept click')" rippleEffect>
+                                        close
+                                    </button>
+                                    </div>
+                            
+                            </div>
+                        </form>
+                        </div>
+                </div>
+                    <!--/ center profile info section -->
+
+
+
+                                         
+                                            </div>
+                                            
+                                        </form>
+                                        </div>
+
+                                    </ng-template>
+
+
+
+                                    <div class="col-12 d-flex justify-content-between mt-5">
+                                        <h4 class="card-title">Factors</h4>
+                                        <div class="form-group">
+                                            <button type="button" (click)="modalOpenJobFactorQuestion(factorQuestionModalXL)" class="btn btn-primary" rippleEffect>Add New Factor</button>
+                                        </div>
+                                    </div>
+
+                                  
+                                    <div class="col-12 bg-light-primary p-2 mt-1">
+                                        <!-- <div class="row">
+                                            <div class="col-4 mb-2 d-flex justify-content-between" *ngFor="let data of factorCheckboxArray" >
+                                        
+                                            
+                                                <div class="custom-control custom-checkbox" >
+                                                    <input  #data  class="custom-control-input" [checked]="data.selected" type="checkbox"  [value]="data.id" name="datagroup" id="{{data.title}}"  (change)="onChange($event)">
+                                                    <label class="custom-control-label" for="{{data.title}}" >
+                                                      {{data.title}}
+                                                    </label>
+    
+                                                    </div>
+
+
+                                             
+
+                                           
+                                           
+                                                </div>
+
+                                        </div> -->
+
+                                        <table class="table table-hover-animation" >
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                  <th>FACTOR title</th>
+                                                  <th>SAMPLE QUESTION</th>
+                                                </tr>
+                                              </thead>
+                                            <tbody>
+                                              <tr *ngFor="let data of factorCheckboxArray">
+                                                <td>
+                                                    <!-- <input type="checkbox"  [(ngModel)]="data.selected"
+                                                    (change)="onChangeFactor(data.id, $event.target.checked)"
+                                                    > -->
+                                                    <input  #data   [checked]="data.selected" type="checkbox"  [value]="data.id" name="datagroup" id="{{data.title}}"  (change)="onChangeFactor($event)">
+
+                                                
+                                                
+                                                
+                                                </td>
+                                               <!-- <td> <input  #data class="custom-control-input" type="checkbox" [value]="data.sampleQuestion" name="datagroup"
+                                                        id="{{data.sampleQuestion}}" (change)="onChangeFactor(data.id, $event.target.checked)"> </td> -->
+                                                <td>{{ data.title }}</td>
+                                                <td>{{data.sampleQuestion}}</td>
+
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </div>
+                                    <!-- Factor question Modal -->
+                                    <ng-template #factorQuestionModalXL let-modal>
+                                        <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel160">Add new Job Factor</h4>
+                                        <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                        
+                        
+                                        <div class="modal-body" tabindex="0" ngbAutofocus>
+                                        <form #educationForm="ngForm" action="#" class="invoice-repeater">
+                        
+                                            <div @heightIn>
+                        
+                                            <div class="row">
+                        
+                        
+                                                <div class="form-group col-md-6">
+                                                <label for="title">Title</label>
+                                                <input type="text" class="form-control" [(ngModel)]="title" name="title"
+                                                    id="title" placeholder="Technical Skills" />
+                        
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                <label for="sampleQuestion">Sample Question</label>
+                                                <textarea type="textarea" rows="4" type="text" class="form-control"
+                                                    [(ngModel)]="sampleQuestion" name="sampleQuestion"
+                                                    id="sampleQuestion"
+                                                    placeholder="write a few lines and describe your questoin."> </textarea>
+                                                </div>
+                                            </div>
+                        
+                        
+                        
+                                            </div>
+                                        </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            (click)="factorQuestionSubmit(); modal.close('Accept click')" rippleEffect>
+                                            Save
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Accept click')" rippleEffect>
+                                            close
+                                        </button>
+                                        </div>
+                                    </ng-template>
+                                   
+                                    <div class="col-12 mt-4">
+                                        <h4 class="card-title">Publish On Different Job Boards(For Future Use)</h4>
+                                    </div>
+
+                                    <div class="col-12 bg-light-primary d-flex p-3 flex-column justify-content-start">
+                                        <p class="text-body"> Check the box to auto-post this job to the job sites</p>
+                                        <div class="cont-main">
+                                            <div class="cont-checkbox" *ngFor="let logo of logos; index as i">
+                                                <input type="checkbox" [id]="'myCheckbox-' + i" checked />
+                                                <label [for]="'myCheckbox-' + i">
+                                                    <img [src]="logo.img" />
+                                                    <span class="cover-checkbox">
+                                                        <svg viewBox="0 0 12 10">
+                                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                        </svg>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12 mt-4">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="acceptance" />
+                                            <label class="custom-control-label" for="acceptance">Post through Company's Profile</label>
+                                        </div>
+                                    </div>
+
+                                   
+                                   
+                                    
+                                    <div class="col-12 mt-5 d-flex justify-content-center">
+                                        <div class="form-group">
+                                            <button class="btn btn-outline-primary mr-2 mb-2" type="button" rippleEffect>
+                                                <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                                Save</button>
+                                            <button class="btn btn-primary mr-2 mb-2" type="submit"  rippleEffect>Preview & Publish</button>
+                                            <button class="btn btn-light mr-2 mb-2" type="reset" rippleEffect>
+                                                <span [data-feather]="'x'" [class]="'mr-25'"> </span>
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+          
+        </div>
+    </div>
+</section>
+
+
+
+
+            </div>
+        </section>
+        <!--/ User List -->
+    </div>
+
+    
+</div>

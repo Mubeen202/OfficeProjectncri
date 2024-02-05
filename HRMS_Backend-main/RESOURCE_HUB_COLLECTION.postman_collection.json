@@ -1,0 +1,4542 @@
+{
+	"info": {
+		"_postman_id": "c51aa4a9-96a6-4d51-8635-9f322443913f",
+		"name": "RESOURCE_HUB_COLLECTION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25396722"
+	},
+	"item": [
+		{
+			"name": "CAREERJOBS",
+			"item": [
+				{
+					"name": "CREATE_JOBS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" :\"Shipping and Receiving Clerk\",\r\n    \"clientName\" :\"ccb78fc7-81e9-47cd-9085-ad0d50d330dd\",\r\n    \"contactNumber\":\"03034090083d\",\r\n    \"email\" :\"mansoor.ali@gmail.com\",\r\n    \"accountManager\":\"18d86656-5f7f-44ca-83a6-531e28862572\",\r\n    \"assignRecruiter\" :\"6affa03c-87cf-47cf-a765-d14d065b9219\",\r\n    \"dateOpened\":\"2022-09-09\",\r\n    \"jobStatus\" :\"Active\",\r\n    \"jobType\" :\"Temporary\", \r\n    \"workExperience\" :\"1 years\",\r\n    \"department\" :\"c28d2831-f003-4f00-ba89-0a4c8e73b79d\",  \r\n    \"skillSet\":\"Scanning and sorting incoming and outgoing stock.Receiving, stocking, and stacking.\", \r\n    \"salary\":\"10000\",\r\n    \"location\":\"islamabad\",\r\n    \"country\":\"pakistan\",\r\n    \"city\":\"islamabad\",\r\n    \"logo\":\"logo.jpg\", \r\n    \"postalCode\":\"45000\", \r\n    \"noOfJobOpening\":\"4\",\r\n    \"description\" :\"A receiving clerk must have a great eye for detail and basic math skills. They must also have adequate physical strength to unload shippings as well as the clerical skills to update records and follow up with suppliers. The goal is to ensure we receive the correct packages and stock them appropriately.\",\r\n    \"requirments\" :\"A Shipping Clerk's responsibilities include recording every detail of the order, from packing items into containers to labeling them. They are also accountable for ensuring that each package gets shipped correctly and timely to avoid missing deliveries or lost goods\",\r\n    \"jobSummry\" :\"A Shipping Clerk's responsibilities include recording every detail of the order, from packing items into containers to labeling them. They are also accountable for ensuring that each package gets shipped correctly and timely to avoid missing deliveries or lost goods\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_JOBS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" :\"Node js Devloper\",\r\n    \"clientName\" :\"d793dd82-2785-4982-9a83-7ee41fb4b67e\",\r\n    \"contactNumber\":\"03034090083d\",\r\n    \"email\" :\"mubeen.sheikh@ncri.com\",\r\n    \"accountManager\":\"ba91ca68-fd25-469b-9fe0-259e81da996f\",\r\n    \"assignRecruiter\" :\"b53fd175-3828-4e13-b326-7f7b8f00e921\",\r\n    \"dateOpened\":\"2022-09-09\",\r\n    \"jobStatus\" :\"Active\",\r\n    \"jobType\" :\"Permanent\", \r\n    \"workExperience\" :\"2 years\",\r\n    \"department\" :\"dccc99de-5dd9-41e0-93f4-c15242b33d01\",  \r\n    \"skillSet\":\"Java script\", \r\n    \"salary\":\"200000\",\r\n    \"location\":\"islamabad\",\r\n    \"country\":\"pakistan\",\r\n    \"city\":\"islamabad\",\r\n    \"logo\":\"logo.jpg\", \r\n    \"postalCode\":\"45000\", \r\n    \"noOfJobOpening\":\"4\",\r\n    \"description\" :\"A Python Developer is responsible for coding, designing, deploying, and debugging development projects, typically on the server-side (or back-end). They may, however, also help organizations with their technological framework\",\r\n    \"requirments\" :\"BSc in Computer Science, Btech in Computer Science or any other related field Prior Work experience is preferred. Familiarity with ORM Libraries.  Proficient in any 1 Python Framework. Knowledge of Front-end Technologies. Familiarity with Version Control Systems. Fundamentals of Machine learning/ AI.\",\r\n    \"jobSummry\" :\"Python Developer responsibilities include writing and testing code, debugging programs and integrating applications with third-party web services. To be successful in this role, you should have experience using server-side logic and work well in a team..\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/allJobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"allJobs"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "y",
+									"disabled": true
+								},
+								{
+									"key": "department",
+									"value": "Account",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_JOB_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"a8461e40-b997-4c2c-90ad-6631bdc8a52c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/getJobById/1cc31e24-6c0e-4681-af97-d2a26c48e090",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getJobById",
+								"1cc31e24-6c0e-4681-af97-d2a26c48e090"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_JOB_BY_ID_CREATOR",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"a8461e40-b997-4c2c-90ad-6631bdc8a52c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/jobGetById/2925c747-fc01-44d2-be5a-70c95feb0e1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobGetById",
+								"2925c747-fc01-44d2-be5a-70c95feb0e1c"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_JOB",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" :\"Medical\",\r\n    \"clientName\" :\"36f43e69-707c-47d2-b3b1-c145de377a2e\",\r\n    \"contactNumber\":\"03034090083d\",\r\n    \"email\" :\"ali.adaem@ncri.com\",\r\n    \"accountManager\":\"9ee73144-8a6f-4a95-8a53-7b558bc6c394\",\r\n    \"assignRecruiter\" :\"74e2a4a6-b89a-4674-ad2e-109a9b10d650\",\r\n    \"dateOpened\":\"2022-09-09\",\r\n    \"jobStatus\" :\"Active\",\r\n    \"jobType\" :\"Permanent\", \r\n    \"workExperience\" :\"3 years\",\r\n    \"department\" :\"4f6230bf-6a19-476b-bb41-b8aff9441251\",  \r\n    \"skillSet\":\"Nodejs , react js \", \r\n    \"salary\":\"200000\",\r\n    \"location\":\"islamabad\",\r\n    \"country\":\"pakistan\",\r\n    \"city\":\"islamabad\",\r\n    \"logo\":\"logo.jpg\", \r\n    \"postalCode\":\"45000\", \r\n    \"noOfJobOpening\":\"4\",\r\n    \"description\" :\"Let's is a contraction of “let us.” You use it to make suggestions about what you and someone else should do.\",\r\n    \"requirments\" :\"Let's is a contraction of “let us.” You use it to make suggestions about what you and someone else should do.\",\r\n    \"jobSummry\" :\"Let's is a contraction of “let us.” You use it to make suggestions about what you and someone else should do.\"\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/jobs/2925c747-fc01-44d2-be5a-70c95feb0e1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs",
+								"2925c747-fc01-44d2-be5a-70c95feb0e1c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUBLISH_JOB",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" :\"Medical\",\r\n    \"clientName\" :\"36f43e69-707c-47d2-b3b1-c145de377a2e\",\r\n    \"contactNumber\":\"03034090083d\",\r\n    \"email\" :\"ali.adaem@ncri.com\",\r\n    \"accountManager\":\"9ee73144-8a6f-4a95-8a53-7b558bc6c394\",\r\n    \"assignRecruiter\" :\"74e2a4a6-b89a-4674-ad2e-109a9b10d650\",\r\n    \"dateOpened\":\"2022-09-09\",\r\n    \"jobStatus\" :\"Active\",\r\n    \"jobType\" :\"Permanent\", \r\n    \"workExperience\" :\"3 years\",\r\n    \"department\" :\"4f6230bf-6a19-476b-bb41-b8aff9441251\",  \r\n    \"skillSet\":\"Nodejs , react js \", \r\n    \"salary\":\"200000\",\r\n    \"location\":\"islamabad\",\r\n    \"country\":\"pakistan\",\r\n    \"city\":\"islamabad\",\r\n    \"logo\":\"logo.jpg\", \r\n    \"postalCode\":\"45000\", \r\n    \"noOfJobOpening\":\"4\",\r\n    \"description\" :\"Let's is a contraction of “let us.” You use it to make suggestions about what you and someone else should do.\",\r\n    \"requirments\" :\"Let's is a contraction of “let us.” You use it to make suggestions about what you and someone else should do.\",\r\n    \"jobSummry\" :\"Let's is a contraction of “let us.” You use it to make suggestions about what you and someone else should do.\"\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/jobPublish/efc3791f-ed15-40a3-8bff-e200ace481ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobPublish",
+								"efc3791f-ed15-40a3-8bff-e200ace481ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_JOB",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/jobs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DEPARTMENT",
+			"item": [
+				{
+					"name": "CREATE_DEPARTMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Hr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/department",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"department"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_DEPARTMENT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/department",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_DEPARTMENT_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/department/9f8bc694-a6ca-45b7-8a81-efad7d38cba3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"department",
+								"9f8bc694-a6ca-45b7-8a81-efad7d38cba3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_DEPARTMENT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"deptName\":\"Account\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/department/c027f988-a0a0-4a1c-ac9a-faf0e017f477",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"department",
+								"c027f988-a0a0-4a1c-ac9a-faf0e017f477"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_DEPARTMENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/department/7f2c3ea7-1d34-4f9a-86d2-402ed54eac25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"department",
+								"7f2c3ea7-1d34-4f9a-86d2-402ed54eac25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EMAIL_NOTIFICATION",
+			"item": [
+				{
+					"name": "GET_CANDIDATE_EMAIL_RECORDS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateId\":[\"271f86ee-0f0e-4d18-ae26-18f65bd6ad4e\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/getEmailDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getEmailDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_CANDIDATE_DRAFT_EMAIL_RECORDS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateId\":[\"271f86ee-0f0e-4d18-ae26-18f65bd6ad4e\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/getDraftEmailDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getDraftEmailDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SEND_EMAIL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"2ceb8019-3f50-4bb0-a4b4-ade27439b71c\",\r\n    \"candidateId\": \"e98768b0-7d0f-4e90-87e3-f01624d23ec2\",\r\n    \"email\": [\r\n        \"syed.ajwad@ncrisolutions.com\",\r\n        \"mubeen.sheikh@ncri.com\"\r\n    ],\r\n    \"subject\": \"subtest\",\r\n    \"describe\": \"<p>test</p>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DRAFT_EMAIL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"2ceb8019-3f50-4bb0-a4b4-ade27439b71c\",\r\n    \"candidateId\": \"271f86ee-0f0e-4d18-ae26-18f65bd6ad4e\",\r\n    \"email\": [\r\n        \"mubeen.sheikh@ncri.com\"\r\n    ],\r\n    \"subject\": \"draft email\",\r\n    \"describe\": \"draft email\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/emailDraft",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"emailDraft"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DRAFT_EMAIL_SENT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"0b1f8053-975f-4f60-ab50-721a78061811\",\r\n    \"name\": \"2ceb8019-3f50-4bb0-a4b4-ade27439b71c\",\r\n    \"candidateId\": \"271f86ee-0f0e-4d18-ae26-18f65bd6ad4e\",\r\n    \"email\": [\r\n        \"syed.ajwad@ncrisolutions.com\",\r\n        \"mubeen.sheikh@ncri.com\"\r\n    ],\r\n    \"subject\": \"subtest\",\r\n    \"describe\": \"<p>test</p>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/emailDraftSent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"emailDraftSent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QUESTIONS",
+			"item": [
+				{
+					"name": "CREATE_CHECKBOX_QUESTIONS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"type\":\"upload\",\r\n   \"question\":\"updated\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE_QUESTIONS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"type\":\"upload\",\r\n   \"question\":\"updated\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_QUESTIONS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "bac62af2-a0a4-4cba-bf13-4543216590d1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_DEPARTMENT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"jobId\":\"404bec46-cecf-4304-a644-ac81501ce5f8\",\r\n   \"type\":\"text\",\r\n   \"question\":\"What do I need to know about shipping and receiving?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions/6bf7b248-be84-4796-867e-6880fa07b32d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions",
+								"6bf7b248-be84-4796-867e-6880fa07b32d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_CHECKBOX_QUESTION",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"jobId\":\"404bec46-cecf-4304-a644-ac81501ce5f8\",\r\n   \"type\":\"text\",\r\n   \"question\":\"What do I need to know about shipping and receiving?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions/6bf7b248-be84-4796-867e-6880fa07b32d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions",
+								"6bf7b248-be84-4796-867e-6880fa07b32d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REQUIRED_QUESTION",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"jobId\":\"404bec46-cecf-4304-a644-ac81501ce5f8\",\r\n   \"type\":\"text\",\r\n   \"question\":\"What do I need to know about shipping and receiving?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/requiredQuestions/02ad94d0-2003-45b7-902e-2d277c963302",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"requiredQuestions",
+								"02ad94d0-2003-45b7-902e-2d277c963302"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_DEPARTMENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions/7f2c3ea7-1d34-4f9a-86d2-402ed54eac25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions",
+								"7f2c3ea7-1d34-4f9a-86d2-402ed54eac25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CHECKBOXS_VALUES",
+			"item": [
+				{
+					"name": "CREATE_QUESTIONS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"questionId\":\"63eb1de8-ed66-4734-a503-6545d22272cb\",\r\n   \"value\":\"Time management\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/checkbox",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checkbox"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_QUESTIONS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/checkbox",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checkbox"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "bac62af2-a0a4-4cba-bf13-4543216590d1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_DEPARTMENT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"type\":\"Yes  \",\r\n   \"question\":\" threaded ?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions/3a4432dc-8596-46ea-80bd-b335c96bca2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions",
+								"3a4432dc-8596-46ea-80bd-b335c96bca2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_DEPARTMENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions/7f2c3ea7-1d34-4f9a-86d2-402ed54eac25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions",
+								"7f2c3ea7-1d34-4f9a-86d2-402ed54eac25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COMMON_VALUES",
+			"item": [
+				{
+					"name": "CREATE_VALUES",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"type\":\"Language\",\r\n   \"code\":\"En\",\r\n   \"value\":\"English\",\r\n   \"seqNo\":\"4\",\r\n   \"isSetDefault\": false,\r\n   \"isProgramaticallyUsed\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/commonValues",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"commonValues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_VALUES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":[\"country\", \"language\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gettingCommonValues",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gettingCommonValues"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CALENDER",
+			"item": [
+				{
+					"name": "CREATE_CANDIDATE_CALENDER",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"title\":\"meeting\",\r\n   \"lable\":\"meeting\",\r\n   \"candidateId\":\"12e1fe18-3820-431a-9a1c-78fc55fdf84d\",\r\n   \"location\":\"islamabad\",\r\n   \"eventUrl\":\"http://localhost:4200/view-candidates/profile/098a6b41-185b-4b01-88ce-bddc738a0598\",\r\n   \"descriptions\":\"this is calender\",\r\n   \"startDate\":\"2022-02-13\",\r\n   \"endDate\":\"2023-03-13\",\r\n   \"addGuest\":[\"d3748699-224c-49b9-9078-cb2de1b2258c\", \"\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/calender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"calender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_CALENDER_RECORDS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateId\": [\"12e1fe18-3820-431a-9a1c-78fc55fdf84d\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gettingCalenderRecords",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gettingCalenderRecords"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_CALENDER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"title\":\"xyz this\",\r\n   \"notes\":\"this person is good this\",\r\n   \"candidateId\":\"082fef28-ac8a-4978-bd4b-57c2f7dcbd98\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/recruiterNotes/1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recruiterNotes",
+								"1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_CALENDER",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":[\"country\", \"language\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/recruiterNotes/1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recruiterNotes",
+								"1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COVER_LETTER",
+			"item": [
+				{
+					"name": "CREATE_COVER_LETTER",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descriptions",
+									"value": "this is letter",
+									"type": "default"
+								},
+								{
+									"key": "candidateId",
+									"value": "12e1fe18-3820-431a-9a1c-78fc55fdf84d",
+									"type": "default"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "///192.168.100.185/HomeFolderUsers/mubeen.sheikh/Downloads/Mubeen's Resume.pdf",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/coverLetter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"coverLetter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_CANDIDATE_COVER_LETTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateId\": [\"12e1fe18-3820-431a-9a1c-78fc55fdf84d\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gettingCoverLetter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gettingCoverLetter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_CALENDER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"title\":\"xyz this\",\r\n   \"notes\":\"this person is good this\",\r\n   \"candidateId\":\"082fef28-ac8a-4978-bd4b-57c2f7dcbd98\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/recruiterNotes/1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recruiterNotes",
+								"1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_CALENDER",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":[\"country\", \"language\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/recruiterNotes/1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recruiterNotes",
+								"1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RECRITER_CANDIDATE_NOTES Copy",
+			"item": [
+				{
+					"name": "CREATE_NOTES",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"title\":\"xyz\",\r\n   \"notes\":\"this person is good\",\r\n   \"candidateId\":\"082fef28-ac8a-4978-bd4b-57c2f7dcbd98\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/recruiterNotes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recruiterNotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_NOTES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gettingRecruiterNotes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gettingRecruiterNotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_NOTES",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":[\"country\", \"language\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gettingCommonValues",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gettingCommonValues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_NOTES",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":[\"country\", \"language\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/recruiterNotes/1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recruiterNotes",
+								"1d5a81d2-d98e-4447-a1e5-71b94fbb5c0f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JOB_RELATED_QUESTIONS",
+			"item": [
+				{
+					"name": "CREATE_RELATED_QUESTIONS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"questionId\":\"2054d800-3c61-426f-b26b-111e264c793d\",\r\n   \"jobId\":\"bac62af2-a0a4-4cba-bf13-4543216590d1\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/jobRelatedQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobRelatedQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_RELATED_QUESTIONS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/jobRelatedQuestions?jobId=bac62af2-a0a4-4cba-bf13-4543216590d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobRelatedQuestions"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "bac62af2-a0a4-4cba-bf13-4543216590d1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_DEPARTMENT_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/department/c027f988-a0a0-4a1c-ac9a-faf0e017f477",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"department",
+								"c027f988-a0a0-4a1c-ac9a-faf0e017f477"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_DEPARTMENT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"deptName\":\"Account\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/department/c027f988-a0a0-4a1c-ac9a-faf0e017f477",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"department",
+								"c027f988-a0a0-4a1c-ac9a-faf0e017f477"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_DEPARTMENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/department/7f2c3ea7-1d34-4f9a-86d2-402ed54eac25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"department",
+								"7f2c3ea7-1d34-4f9a-86d2-402ed54eac25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COMPANY_INFORMATION",
+			"item": [
+				{
+					"name": "CREATE_COMPANY",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"code\":\"2\",\r\n   \"name\":\"work\",\r\n   \"tenantId\":\"3c7b7dcf-c94c-4693-b64c-ba22b7fe9731\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_COMPANY",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_COMPANY_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTY3NzQxLCJpYXQiOjE2NjgxNjc0NDEsImp0aSI6ImMyY2ZiNjJiMGYwYTRkNTRhNzdiZTgxMzU1M2VhMWVkIiwidXNlcl9pZCI6IjE1MGY1MzY5LTVlYjMtNGEzOS05Y2Q1LWMxM2YyY2I2ZWIxZiJ9.HRR3yc-Mqak7shNb_z8JEEpJARsOGEbTBjK25WAY5jQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/company/ea46c3e6-72dd-440c-be31-34e415f78383",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"company",
+								"ea46c3e6-72dd-440c-be31-34e415f78383"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_COMPANY",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"code\":\"2\",\r\n   \"name\":\"work valley\",\r\n   \"tenantId\":\"3c7b7dcf-c94c-4693-b64c-ba22b7fe9731\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/company/62677a39-a36b-4e11-8ea6-0c98ff897c21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"company",
+								"62677a39-a36b-4e11-8ea6-0c98ff897c21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_COMPANY",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/department/7f2c3ea7-1d34-4f9a-86d2-402ed54eac25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"department",
+								"7f2c3ea7-1d34-4f9a-86d2-402ed54eac25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TENANT_INFORMATION",
+			"item": [
+				{
+					"name": "CREATE",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"code\":\"10\",\r\n   \"name\":\"js bank\",\r\n   \"accessLevel\":\"manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/tenantInformation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenantInformation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_DATA",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/tenantInformation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenantInformation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET__BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/tenantInformation/c3ca83db-be80-4f08-87a2-781ee79f9435",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenantInformation",
+								"c3ca83db-be80-4f08-87a2-781ee79f9435"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"code\":\"10\",\r\n   \"name\":\"js bank limited\",\r\n   \"accessLevel\":\"manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/tenantInformation/d5232d7a-1979-4a22-bd03-1533aa167d51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenantInformation",
+								"d5232d7a-1979-4a22-bd03-1533aa167d51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/tenantInformation/0aa96e7f-f9dd-44fe-8c2f-4d3b7199ccc5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenantInformation",
+								"0aa96e7f-f9dd-44fe-8c2f-4d3b7199ccc5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EXTERNAL_COMPANY",
+			"item": [
+				{
+					"name": "GET_ALL_DATA",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/externalAgency",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"externalAgency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":\"123\",\r\n   \"name\":\"troon tech\",\r\n   \"comapanyId\":\"ea46c3e6-72dd-440c-be31-34e415f78383\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/externalAgency",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"externalAgency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET__BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTcwNDIyLCJpYXQiOjE2NjgxNzAxMjIsImp0aSI6ImUzMWE0ZWE0NzUyZjQ0M2M4ZTM2OGI3YWNjZDU3NWJjIiwidXNlcl9pZCI6IjE1MGY1MzY5LTVlYjMtNGEzOS05Y2Q1LWMxM2YyY2I2ZWIxZiJ9.5NpJvRyrehvuqQO_V6jL8x4VOxF-y4EZhz4yYF6jThE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/externalAgency/d302b2b1-8e2b-427e-9960-5f4e4ddc3a5d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"externalAgency",
+								"d302b2b1-8e2b-427e-9960-5f4e4ddc3a5d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTcwNTcxLCJpYXQiOjE2NjgxNzAyNzEsImp0aSI6Ijg4NjI2MTY4NTA0MTQxMzNhZWUyZTg4ZDE1YjEyNGY5IiwidXNlcl9pZCI6IjE1MGY1MzY5LTVlYjMtNGEzOS05Y2Q1LWMxM2YyY2I2ZWIxZiJ9.evlMstQLsi2dE54Qn0NMo_kBEfsxTQSPonD5SDMz16A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":\"1224\",\r\n   \"name\":\"devspot\",\r\n   \"comapanyId\":\"8a124fdc-3076-468b-9f86-8ed6d19d2526\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/externalAgency/d609b5cc-3204-4d14-9eaa-2cdfe7fba6dc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"externalAgency",
+								"d609b5cc-3204-4d14-9eaa-2cdfe7fba6dc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTcwNTcxLCJpYXQiOjE2NjgxNzAyNzEsImp0aSI6Ijg4NjI2MTY4NTA0MTQxMzNhZWUyZTg4ZDE1YjEyNGY5IiwidXNlcl9pZCI6IjE1MGY1MzY5LTVlYjMtNGEzOS05Y2Q1LWMxM2YyY2I2ZWIxZiJ9.evlMstQLsi2dE54Qn0NMo_kBEfsxTQSPonD5SDMz16A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/externalAgency/d609b5cc-3204-4d14-9eaa-2cdfe7fba6dc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"externalAgency",
+								"d609b5cc-3204-4d14-9eaa-2cdfe7fba6dc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RECRUITERS",
+			"item": [
+				{
+					"name": "CREATE_RECUITER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ajwad\",\r\n    \"employId\":\"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/recruiter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"recruiter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_RECRUITERS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/recruiter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"recruiter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_RECRUITER_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/recruiter/088e7db6-2183-4987-8964-6f636e1f69a0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"recruiter",
+								"088e7db6-2183-4987-8964-6f636e1f69a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_JOB",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recrName\":\"amjad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/recruiter/d3e17ec-3871-46fa-b517-e7783207e562",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"recruiter",
+								"d3e17ec-3871-46fa-b517-e7783207e562"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_JOB",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/jobs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ACCOUNT_MANAGER",
+			"item": [
+				{
+					"name": "CREATE_ACCOUNT_MANAGER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Qasim\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/accountManager",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accountManager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ACCOUNT_MANAGERS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/accountManager",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accountManager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ACCOUNT_MANAGER_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_ACCOUNT_MANAGER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/jobs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_ACCOUNT_MANAGER",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/jobs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CAREER_CONTENT",
+			"item": [
+				{
+					"name": "CREATE_CAREER_CONTENT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjY0MjY5MTQ5LCJpYXQiOjE2NjQyNjU1NDl9.L8ugo2JVy1Pamz-xww7PaBVAoX3kyb_2N79rUFzRjAQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Python Developer\",\r\n    \"subTitle\" : \"We are Hiring Python Developer for our company\",\r\n    \"designation\" :\"IT Development\",\r\n    \"description\" :\"Python. js developers deploy and maintain network applications. They manage the exchange of data between servers and users, develop back-end components, and connect applications with other web services\",\r\n    \"salary\" :30000,\r\n    \"salaryBase\" :\"month\",\r\n    \"jobBase\":\"permanent\",\r\n    \"jobType\" :\"full time\",\r\n    \"companyLogo\":\"dlkjdslk.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_CAREER_CONTENTS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/careerContent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"careerContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_CAREERCONTENT_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_CAREER_CONTENT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/jobs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_CAREER_CONTENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/jobs/jobs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"jobs",
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LOGIN_API",
+			"item": [
+				{
+					"name": "REGISTER_USER",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"user\":{\r\n        \"username\":\"d\",\r\n        \"email\":\"d@gmail.com\",\r\n        \"password\":\"mubeen123\",\r\n        \"full_name\":\"d user\"\r\n    }\r\n  \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER_USER_BY_ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"user\":{\r\n        \"username\":\"y\",\r\n        \"email\":\"y@gmail.com\",\r\n        \"password\":\"shoohira123\",\r\n        \"full_name\":\"y user\",\r\n        \"xyz\":\"mubeen123\",\r\n        \"usersRoles\":[{\r\n            \"roleId\":\"5ef76dd4-fd24-4e9b-99bc-2deb5dda83a3\",\r\n            \"created_by\":\"18ef7fc6-8472-43da-86b4-681bbf395c3a\",\r\n            \"updated_by\":\"18ef7fc6-8472-43da-86b4-681bbf395c3a\"\r\n        },\r\n        {\r\n            \"roleId\":\"6f114f51-72e5-4004-856e-633e61a14463\",\r\n            \"created_by\":\"18ef7fc6-8472-43da-86b4-681bbf395c3a\",\r\n            \"updated_by\":\"18ef7fc6-8472-43da-86b4-681bbf395c3a\"\r\n        },\r\n        {\r\n            \"roleId\":\"5ef76dd4-fd24-4e9b-99bc-2deb5dda83a3\",\r\n            \"created_by\":\"18ef7fc6-8472-43da-86b4-681bbf395c3a\",\r\n            \"updated_by\":\"18ef7fc6-8472-43da-86b4-681bbf395c3a\"\r\n        }\r\n\r\n        ]\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/userRegister",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"userRegister"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_USER_INFORMATION",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjhjNDM3MmIzLWZhMDctNDNhZC05NzdjLThiZDM2OWMyYTM2YSIsImV4cCI6MTY2Nzk0NzExNiwiaWF0IjoxNjY3OTQzNTE2fQ.0zDygUQtFYDDbwcjgrxFwXvZUFJ6-w-s1bfEvqHi3bc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"user\":{\r\n        \"username\":\"mubeen\",\r\n        \"email\":\"mubeen@gmail.com\",\r\n        \"password\":\"shoohira123\",\r\n        \"full_name\":\"shohira aftab\"\r\n       \r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/information",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_USER_INFORMATION Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjhjNDM3MmIzLWZhMDctNDNhZC05NzdjLThiZDM2OWMyYTM2YSIsImV4cCI6MTY2Nzk0NzExNiwiaWF0IjoxNjY3OTQzNTE2fQ.0zDygUQtFYDDbwcjgrxFwXvZUFJ6-w-s1bfEvqHi3bc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/information",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_USERS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjhjNDM3MmIzLWZhMDctNDNhZC05NzdjLThiZDM2OWMyYTM2YSIsImV4cCI6MTY2Nzk0NzExNiwiaWF0IjoxNjY3OTQzNTE2fQ.0zDygUQtFYDDbwcjgrxFwXvZUFJ6-w-s1bfEvqHi3bc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_USER_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjhjNDM3MmIzLWZhMDctNDNhZC05NzdjLThiZDM2OWMyYTM2YSIsImV4cCI6MTY2Nzk0NzExNiwiaWF0IjoxNjY3OTQzNTE2fQ.0zDygUQtFYDDbwcjgrxFwXvZUFJ6-w-s1bfEvqHi3bc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/user/4f3b587d-ed7d-4ef0-baff-a63177d28f36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"user",
+								"4f3b587d-ed7d-4ef0-baff-a63177d28f36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_USER_BY_ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjhjNDM3MmIzLWZhMDctNDNhZC05NzdjLThiZDM2OWMyYTM2YSIsImV4cCI6MTY2Nzk0NzExNiwiaWF0IjoxNjY3OTQzNTE2fQ.0zDygUQtFYDDbwcjgrxFwXvZUFJ6-w-s1bfEvqHi3bc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user\":{\r\n\r\n                \"email\": \"faisal@gmail.com\",\r\n                \"username\": \"faisalhabib\",\r\n                \"full_name\": \"faisal\",\r\n                \"password\":\"mubeen123\",\r\n                \"usersRoles\": [\r\n                    \r\n                    \r\n                    {\r\n                        \"id\": \"b81ede1f-00dc-48d3-ade3-0a9faf5e19b4\",\r\n                        \"roleId\": \"5ef76dd4-fd24-4e9b-99bc-2deb5dda83a3\",\r\n                        \"created_by\": \"18ef7fc6-8472-43da-86b4-681bbf395c3a\",\r\n                        \"updated_by\": \"18ef7fc6-8472-43da-86b4-681bbf395c3a\"\r\n                    }\r\n                ]\r\n            }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/updateUser/8a41a902-dcc1-4379-a0c3-11710e76b859",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"updateUser",
+								"8a41a902-dcc1-4379-a0c3-11710e76b859"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REFRESH_TOKEN",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n   \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4NzQ4NjU0LCJpYXQiOjE2Njg3NDg1OTQsImp0aSI6IjE1NjNhOWY2ZjEwOTQ4MWFiNzVhNjA3MTM0MDA5MWQyIiwidXNlcl9pZCI6IjQ1NDc2MDgyLWU0MjAtNGQ0Ni1iMmQ5LTFkM2I2MGJlZmQ3MCJ9.t1MIpW9LoOihpXwqij1TqQLhslI17P9frB9VkFfnHvY\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/token/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"token",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN_USER",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n\"user\"\r\n: \r\n{\"email\": \"mubeen@ncri.com\", \"password\": \"mubeen123\"}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT_USER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTY3MDQyLCJpYXQiOjE2NjgxNjY2NTksImp0aSI6ImNkODUyNGUzZDM5ODQwNWQ5NjRmNDZmMDNjZWM4ZGJjIiwidXNlcl9pZCI6IjE1MGY1MzY5LTVlYjMtNGEzOS05Y2Q1LWMxM2YyY2I2ZWIxZiJ9.XsY5dkaJyRHVdl1GJNDsSdGN5TYlX329yZ3M6Lw_SHg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2ODI1MzAyOSwiaWF0IjoxNjY4MTY2NjI5LCJqdGkiOiJhNTRhZGFkMjRkM2M0ZWQzYTE0ZTFkM2JhMDEzOTFhOSIsInVzZXJfaWQiOiIxNTBmNTM2OS01ZWIzLTRhMzktOWNkNS1jMTNmMmNiNmViMWYifQ.GbbsS-VVoYuZoowY_QfoIl5HUW_IjIe9vyCJwlNp-Yo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ROLES",
+			"item": [
+				{
+					"name": "CREATE_ROLE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"code\":\"3\",\r\n   \"name\":\"cashier\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_ROLES",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ROLE_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/role/e5580239-5ff6-4376-a324-bd4761de69a2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"role",
+								"e5580239-5ff6-4376-a324-bd4761de69a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_ROLE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"code\": \"3\",\r\n    \"name\": \"Accountant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/role/e5580239-5ff6-4376-a324-bd4761de69a2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"role",
+								"e5580239-5ff6-4376-a324-bd4761de69a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_ROLE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/role/adcc5f6e-997a-400a-a2c5-a3c01e6072ec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"role",
+								"adcc5f6e-997a-400a-a2c5-a3c01e6072ec"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER_ROLE",
+			"item": [
+				{
+					"name": "CREATE_USER_ROLE_PERMISSION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\":\"707ecee5-fb76-411f-a95d-6ffcb6470724\",\r\n    \"user\":\"150f53695eb34a399cd5c13f2cb6eb1f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/userRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"userRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_USER_ROLES",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/permissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ROLE_BY_USERID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":\"150f5369-5eb3-4a39-9cd5-c13f2cb6eb1f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/userRoles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"userRoles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_USER_ROLE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mubeensheikh@gmail.com\",\r\n    \"password\":\"mubeen123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_USER_ROLE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CANDIDATE_DROP_CV",
+			"item": [
+				{
+					"name": "CREATE_APPLICATION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_APPLICATION",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApp/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApp",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_DATA",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CANDIDATE_APPLICATION_SUBMIT",
+			"item": [
+				{
+					"name": "CREATE_APPLICATION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CareerJobs\":\"1cc31e24-6c0e-4681-af97-d2a26c48e090\",\r\n    \"firstName\" :\"ali\",\r\n    \"lastName\":\"abid\",\r\n    \"email\" :\"abid@gmail.com\",\r\n    \"lastOrganization\":\"Troon\",\r\n    \"phoneNumber\":\"2234443334\",\r\n    \"address\":\"Rawalpindi\",\r\n    \"state\":\"pak\",\r\n    \"zipCode\" :\"45000\",\r\n    \"country\" :\"pak\",\r\n    \"language\" :\"urdu\",\r\n    \"currentSalary\" :120000,\r\n    \"expectedSalary\":150000,\r\n    \"uploadResume\" :\"cv.jpg\",\r\n    \"answers\":[{\r\n        \"answerOfQues\":\"python and flask\", \"question\":\"91e28923-d57e-45aa-9753-9b539655f642\"\r\n    }]\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApplication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE_APPLICATION Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateSubmitAnswers\":[],\r\n    \"CareerJobs\":\"5d3598a3-1fde-4cc3-b4fb-1b658b8b49cf\",\r\n    \"firstName\" :\"siddique\",\r\n    \"lastName\":\"alam\",\r\n    \"email\" :\"siddiue@gmail.com\",\r\n    \"lastOrganization\":\"Troon\",\r\n    \"phoneNumber\":\"2234443334\",\r\n    \"address\":\"Rawalpindi\",\r\n    \"state\":\"pak\",\r\n    \"zipCode\" :\"45000\",\r\n    \"country\" :\"pak\",\r\n    \"language\" :\"urdu\",\r\n    \"currentSalary\" :120000,\r\n    \"expectedSalary\":150000,\r\n    \"uploadResume\" :\"cv.jpg\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApplication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_APPLICATION",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApp/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApp",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_UNAPPROVED",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/upApprovedCandidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"upApprovedCandidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_DATA",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApplication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_CANDIDATE_BY_ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApplication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApplication"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CANDIDATE_APP_SUBMIT_ANSWER",
+			"item": [
+				{
+					"name": "CREATE_APPLICATION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"userId\":\"123\",\r\n    \"question\" :\"222dcafb-a148-417c-b259-f8ea251db674\",\r\n    \"candidteAppId\":\"6746760a-bae7-4f37-8a2e-8f2c6310b6bc\",\r\n    \r\n    \"answer\":\"yes no\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitAnswer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitAnswer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT_APPLICATION",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApp/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApp",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL_DATA",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mubeensheikh\",\r\n    \"email\" : \"mubeen@gmail.com\",\r\n    \"linkedInUrl\" :\"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"socialUrl\" : \"https://docs.djangoproject.com/en/4.1/topics/db/queries\",\r\n    \"resumeUpload\" : \"/upload/msvcp110.dll\",\r\n    \"coverLetter\":\"/upload/msvcp110.dll\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateSubmitApp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateSubmitApp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FILE_UPLOAD",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/file/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"file",
+								"file"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CANDIDATE_EDUCATION",
+			"item": [
+				{
+					"name": "ORGANIZATION",
+					"item": [
+						{
+							"name": "CREATE_ORGANIZATION",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"organization\":\"NCRI\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/organization",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"organization"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_ORGANIZATION",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/organization",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"organization"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_ORGANIZATION_BY_ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/organization/cf9d161c-8533-4c46-b955-44a8267be50b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"organization",
+										"cf9d161c-8533-4c46-b955-44a8267be50b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EDIT_ORGANIZATION",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"organization\":\"NCRI PVT LTD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/organization/cf9d161c-8533-4c46-b955-44a8267be50b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"organization",
+										"cf9d161c-8533-4c46-b955-44a8267be50b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE_ORGANIZATION",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/organization/cf9d161c-8533-4c46-b955-44a8267be50b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"organization",
+										"cf9d161c-8533-4c46-b955-44a8267be50b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "EDUCATION",
+					"item": [
+						{
+							"name": "CREATE_EDUCATION",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"education\":\"MSC\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/education",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"education"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_EDUCATION",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/education",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"education"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_EDUCATION_BY_ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/education/5742208c-cf8f-430e-b0f2-85465b872bfb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"education",
+										"5742208c-cf8f-430e-b0f2-85465b872bfb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EDIT_EDUCATION",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"education\": \"BSC\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/education/5742208c-cf8f-430e-b0f2-85465b872bfb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"education",
+										"5742208c-cf8f-430e-b0f2-85465b872bfb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE_EDUCATION",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/education/5742208c-cf8f-430e-b0f2-85465b872bfb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"education",
+										"5742208c-cf8f-430e-b0f2-85465b872bfb"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CERTIFICATE",
+					"item": [
+						{
+							"name": "CREATE_CERTIFICATE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"certificate\":\"MS Office\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/certificate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"certificate"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_CERTIFICATES",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3OTQ2ODUwLCJpYXQiOjE2Njc5NDY1NTAsImp0aSI6ImM1NTY2MDdmMWM0NDQzNWQ4YzllZTA2MmU5MTc2ZjRmIiwidXNlcl9pZCI6IjY4N2ZhYTJmLTUzYzEtNDYyNC05NmU4LTk2ZWMzMmUwMGEzYSJ9.0iqGcyleOy5oKDZsStZ9Die9XAp-7L7g7pCaUvFEP7g",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/certificate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"certificate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_CERTIFICATE_BY_ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/certificate/3c26214f-eef3-4341-b249-16b896d44b72",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"certificate",
+										"3c26214f-eef3-4341-b249-16b896d44b72"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EDIT_CERTIFICATE",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"certificate\": \"MS office 365\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/certificate/3c26214f-eef3-4341-b249-16b896d44b72",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"certificate",
+										"3c26214f-eef3-4341-b249-16b896d44b72"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE_CERTIFICATE",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mern stack Developer for Ncri pakistan ddd\",\r\n    \"designation\" : \"Python\",\r\n    \"description\" :\"this is our first job\",\r\n    \"salary\" : 80000,\r\n    \"jobBase\" :\"perment\",\r\n    \"jobType\":\"contract\",\r\n    \"image\" :\"sdfjlksdjfsd.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/certificate/3c26214f-eef3-4341-b249-16b896d44b72",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"certificate",
+										"3c26214f-eef3-4341-b249-16b896d44b72"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CANDIDATE_EDUCATION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"education\",\r\n    \"candidateId\":\"271f86ee-0f0e-4d18-ae26-18f65bd6ad4e\",\r\n    \"degreeName\":\"Internation Islamic University, Islamabad\",\r\n    \"educationType\":\"MS\",\r\n    \"toDate\":\"2016-01-01\",\r\n    \"fromDate\":\"2020-01-01\",\r\n    \"certificateId\":\"15b30554-fb0e-4eb6-8d5e-6375c502d6a1\",\r\n    \"organizationId\":\"20fa55e2-d28d-4235-94db-b9ac3e950565\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateEducation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateEducation"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CANDIDATE_CERTIFICATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"certificate\",\r\n    \"candidateId\":\"271f86ee-0f0e-4d18-ae26-18f65bd6ad4e\",\r\n    \"certificateName\":\"SEO Optimization\",\r\n    \"certificateType\":\"Google Cloud\",\r\n    \"toDate\":\"2016-01-01\",\r\n    \"fromDate\":\"2020-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateEducation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateEducation"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CANDIDATE_EXPERIENCE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"certificate\",\r\n    \"candidateId\":\"271f86ee-0f0e-4d18-ae26-18f65bd6ad4e\",\r\n    \"certificateName\":\"SEO Optimization\",\r\n    \"certificateType\":\"Google Cloud\",\r\n    \"toDate\":\"2016-01-01\",\r\n    \"fromDate\":\"2020-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/candidateEducation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"candidateEducation"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GETTING_CANDIDATE_EDUCATION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateId\": [\"098a6b41-185b-4b01-88ce-bddc738a0598\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/getiingCandidateEducation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getiingCandidateEducation"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "a8461e40-b997-4c2c-90ad-6631bdc8a52c",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc1MDcyNTkyLCJpYXQiOjE2NzUwNjg5NTksImp0aSI6IjRiMzA3M2IxMDYzOTRmMWM5YTViYjYwYjBkNWEzMTA5IiwidXNlcl9pZCI6IjJjZWI4MDE5LTNmNTAtNGJiMC1hNGI0LWFkZTI3NDM5YjcxYyJ9.NXJttam-kDFpDIEcee1gmnOifnHk703_O5NBtlUWCxo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

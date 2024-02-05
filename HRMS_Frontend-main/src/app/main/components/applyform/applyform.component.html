@@ -1,0 +1,181 @@
+<div class="card invoice-preview-card">
+    <div class="card-body pb-0">
+      <!-- Header Starts -->
+      <div class="d-flex justify-content-between flex-md-row flex-column  mt-0">
+        <div>
+            <h1 class="text-dark ">Apply For This Job</h1>
+        </div>
+       
+      </div>
+      <!-- Header Ends -->
+    </div>
+
+    <hr class="invoice-spacing" />
+
+    <div class="col-md-12 col-12">
+        <app-file-uploader></app-file-uploader>
+      </div>
+
+    <!-- Address And Contact Starts -->
+  
+    <div class="card card-apply-job">
+        <div class="card-body">
+    
+          <form #form="ngForm" class="form" #TDValidationForm="ngForm" (ngSubmit)="submitApplication()">
+            <div class="row">
+              <div class="col-md-6 col-12 mb-2  ">
+                <div class="form-group">
+                  <label for="first-name-column">First Name</label>
+                  <input type="text" placeholder="First Name" class="form-control input-md"
+                    [class.error]="TDRequiredFieldRef.invalid && TDValidationForm.submitted" [(ngModel)]="firstname"
+                    #TDRequiredFieldRef="ngModel" required id="TDRequiredField" name="FirstName" />
+                  <small class="form-text text-danger"
+                    *ngIf="TDRequiredFieldRef.invalid && TDValidationForm.submitted">First Name is required!</small>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12 mb-2  ">
+                <div class="form-group">
+                  <label for="first-name-column">Last Name</label>
+                  <input type="text" placeholder="Last Name" class="form-control input-md"
+                    [class.error]="TDRequiredFieldRef.invalid && TDValidationForm.submitted" [(ngModel)]="lastname"
+                    #TDRequiredFieldRef="ngModel" required id="TDRequiredField" name="LastName" />
+                  <small class="form-text text-danger"
+                    *ngIf="TDRequiredFieldRef.invalid && TDValidationForm.submitted">Last Name is required!</small>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12 mb-2">
+                <div class="form-group">
+                  <label class="form-control-label" for="TDValidEmail">Email</label>
+                  <input type="email" id="TDValidEmail" name="email" class="form-control" [(ngModel)]="email"
+                    [class.error]="TDValidEmailRef.invalid && TDValidationForm.submitted" ngModel required
+                    #TDValidEmailRef="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
+                    placeholder="Enter Your Email" />
+                  <small class="form-text text-danger"
+                    *ngIf="TDValidEmailRef.invalid && TDValidationForm.submitted">Must be a valid email!</small>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12 mb-2  ">
+                <div class="form-group">
+                  <label for="first-name-column">Last Organization</label>
+                  <input type="text" placeholder="Enter Your Name" class="form-control input-md"
+                    [class.error]="TDRequiredFieldRef.invalid && TDValidationForm.submitted" [(ngModel)]="lastorg"
+                    #TDRequiredFieldRef="ngModel" required id="TDRequiredField" name="lastorg" />
+                  <small class="form-text text-danger"
+                    *ngIf="TDRequiredFieldRef.invalid && TDValidationForm.submitted">Name is required!</small>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12 mb-2  ">
+                <div class="form-group">
+                  <label for="first-name-column">Phone Number</label>
+                  <input type="tel" placeholder="Enter Your Name" class="form-control input-md"
+                    [class.error]="TDRequiredFieldRef.invalid && TDValidationForm.submitted" [(ngModel)]="phone"
+                    #TDRequiredFieldRef="ngModel" required id="TDRequiredField" name="phone" />
+                  <small class="form-text text-danger"
+                    *ngIf="TDRequiredFieldRef.invalid && TDValidationForm.submitted">Phone number is required!</small>
+                </div>
+              </div>
+
+
+              <div class="col-md-6 col-12 mb-2  ">
+                <div class="form-group">
+                  <label for="first-name-column">Address</label>
+                  <input type="tel" placeholder="Enter Your Name" class="form-control input-md"
+                    [class.error]="TDRequiredFieldRef.invalid && TDValidationForm.submitted" [(ngModel)]="address"
+                    #TDRequiredFieldRef="ngModel" required id="TDRequiredField" name="address" />
+                  <small class="form-text text-danger"
+                    *ngIf="TDRequiredFieldRef.invalid && TDValidationForm.submitted">Address is required!</small>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12 mb-2  ">
+                <div class="form-group">
+                  <label for="first-name-column">State</label>
+                  <input type="tel" placeholder="Enter Your Name" class="form-control input-md"
+                    [class.error]="TDRequiredFieldRef.invalid && TDValidationForm.submitted" [(ngModel)]="state"
+                    #TDRequiredFieldRef="ngModel" required id="TDRequiredField" name="state" />
+                  <small class="form-text text-danger"
+                    *ngIf="TDRequiredFieldRef.invalid && TDValidationForm.submitted">State is required!</small>
+                </div>
+              </div>
+
+
+              <div class="col-md-6 col-12 mb-2  ">
+                <div class="form-group">
+                  <label for="first-name-column">Zip Code</label>
+                  <input type="tel" placeholder="Enter Your Name" class="form-control input-md"
+                    [class.error]="TDRequiredFieldRef.invalid && TDValidationForm.submitted" [(ngModel)]="zipcode"
+                    #TDRequiredFieldRef="ngModel" required id="TDRequiredField" name="zipcode" />
+                  <small class="form-text text-danger"
+                    *ngIf="TDRequiredFieldRef.invalid && TDValidationForm.submitted">Zipcode is required!</small>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12 mb-2">
+                <div class="form-group">
+                    <label for="basicSelect">Country</label>
+                    <select class="form-control" id="basicSelect" required>
+                        <option hidden>Select Country</option>
+                      <option>Canada</option>
+                      <option>USA</option>
+                      <option>Germany</option>
+                    </select>
+                  </div>
+              </div>
+
+              <div class="col-md-6 col-12 mb-2">
+                <div class="form-group">
+                    <label for="language">Language</label>
+                    <select class="form-control" id="language" required>
+                        <option hidden>Select Language</option>
+                      <option>English</option>
+                      <option>French</option>
+                      <option>German</option>
+                    </select>
+                  </div>
+              </div>
+
+              <div class="col-md-6 col-12 mb-2">
+                <div class="form-group">
+                    <label for="language">Timezone</label>
+                    <select class="form-control" id="language" required> 
+                        <option hidden>Select Timezone</option>
+                      <option>English</option>
+                      <option>French</option>
+                      <option>German</option>
+                    </select>
+                  </div>
+              </div>
+
+              
+              <div class="col-md-6 col-12 mb-2">
+                <div class="form-group">
+                    <label for="language">Currency</label>
+                    <select class="form-control" id="language" required>
+                        <option hidden>Select Currency</option>
+                      <option>USD</option>
+                      <option>Euro</option>
+                      <option>Pound</option>
+                    </select>
+                  </div>
+              </div>
+              
+              
+              <div class="col-sm-12 mt-2">
+                <button type="submit" rippleEffect class="btn btn-primary mr-1">Proceed</button>
+                <button type="reset" rippleEffect class="btn btn-outline-secondary mr-1">Discard</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+
+  </div>
+
+
+
+ 

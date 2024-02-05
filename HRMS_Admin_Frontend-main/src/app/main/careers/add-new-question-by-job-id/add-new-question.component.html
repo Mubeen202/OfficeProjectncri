@@ -1,0 +1,512 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+
+        <div id="user-profile">
+
+            <!-- profile info section -->
+            <section id="profile-info">
+            <!-- <button class="btn btn-primary mr-2 mb-2" type="submit" rippleEffect>
+            <span [data-feather]="'user'" [class]="'mr-25'"></span>
+                Add Job
+            </button> -->
+
+                <div class="row">
+                    <!-- left profile info section -->
+                    <!-- Profile Card -->
+                    <div class="col-lg-6 col-md-12 col-sm-12 align-items-stretch d-flex flex-column">
+                        <div class="card h-100">
+
+                        
+                        <div class="d-flex align-content-center justify-content-between flex-column w-100 card-body">
+                            <div class="input-group input-group-merge">
+                                <input type="text" class="form-control" id="question-search" placeholder="Search Questions" aria-label="Search..."
+                                    aria-describedby="question-search" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i data-feather="search" class="text-muted"></i></span>
+                                    </div>
+                            </div>
+
+                        <div class="d-flex justify-content-between mt-2">
+                            <h4 class="card-title">Latest Questions</h4>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="admin-read" checked />
+                                <label class="custom-control-label" for="admin-read">Check All</label>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive border rounded mt-1" >
+                            <table class="table bg-light-primary table-borderless" >
+                                <tbody>
+                                  
+                                            <div class="col-4 mb-2 d-flex justify-content-between" *ngFor="let data of checkboxArray" >
+                                        
+                                            
+                                                <div class="custom-control custom-checkbox" >
+                                                    <input  #data  class="custom-control-input" [checked]="data.selected" type="checkbox"  [value]="data.id" name="datagroup" id="{{data.question}}"  (change)="onChange($event)">
+                                                    <label class="custom-control-label" for="{{data.question}}" >
+                                                      {{data.question}}
+                                                    </label>
+    
+                                                    </div>
+
+
+                                                <div class="custom-control custom-switch" >
+                                                <input type="checkbox" [checked]="data.flag" (change)="onChangeRequried(data.id, $event.target.checked)" class="custom-control-input" id="{{data.id}}"/>
+                                                <label class="custom-control-label" for="{{data.id}}">
+                                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                                    </label>
+                                                </div>
+
+                                           
+                                           
+
+                                    </div>
+                                 
+                        
+                                </tbody>
+                            </table>
+                        </div>
+ 
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="row mt-3">
+                                           
+                                                <div class="d-flex justify-content-between align-items-center m-1 ">
+                                                    <h3 class=" ">Frequently Used Questions </h3>
+                            
+                                                </div>
+                                           
+                                            <div class="col-md-6 col-12 d-flex justify-content-start justify-content-md-end">
+                                                <div class="d-flex align-items-center justify-content-end pr-1 pb-1 pb-md-0">
+                                                   
+                                                    <label class="d-flex align-items-center ml-1 ml-md-0">Search:<input [(ngModel)]="searchValue"
+                                                            name="searchValue" type="search" class="form-control ml-25"
+                                                            (keyup)="filterUpdate($event)" (search)="filterUpdate($event)" /></label>
+                            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ngx-datatable [rows]="rows" [rowHeight]="50" class="bootstrap core-bootstrap" [limit]="selectedOption"
+                                            [columnMode]="ColumnMode.force" [headerHeight]="50" [footerHeight]="50" [scrollbarH]="true">
+                                            
+                            
+                                            <ngx-datatable-column name="Questions" prop="questions" [width]="200"></ngx-datatable-column>
+                                            <ngx-datatable-column name="Check"  [width]="50">
+                                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                                <div class="custom-control custom-checkbox"  >
+                                                    <input type="checkbox" class="custom-control-input" [id]="row.id" checked />
+                                                    <label class="custom-control-label" [for]="row.id"></label>
+                                                </div>
+                                                </ng-template>
+                            
+                                            </ngx-datatable-column>
+                                          
+                            
+                                      
+
+                                        <ngx-datatable-column name="Actions" [width]="40" [sortable]="false">
+                                            <ng-template ngx-datatable-cell-template let-row="row">
+                                                <button ngbDropdownToggle type="button" class="btn icon-btn btn-sm hide-arrow" rippleEffect>
+                                                    <span [data-feather]="'trash'" [class]="'cursor-pointer'"></span>
+                                                </button>
+                                               
+                                            </ng-template>
+                                        </ngx-datatable-column>
+                            
+                                        </ngx-datatable>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="row" *ngIf="jobId">
+                            <div class="col-12 d-flex justify-content-center">
+                                <button class="btn btn-primary mr-2 mb-2" (click)="onSubmit()" type="submit" rippleEffect>
+                                    <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                    Save
+                                </button>
+
+                                <button class="btn btn-primary mr-2 mb-2" (click)="onSubmitEdit()" type="submit" rippleEffect>
+                                    <span  [class]="'mr-25'"></span>
+                                    Continue job Opening
+                                </button>
+                            </div>
+
+                               
+                        </div>
+
+                        
+
+                        </div>
+
+                   
+                            </div>
+                        
+                    </div>
+                    
+                    <!--/ Profile Card -->
+                    <!--/ left profile info section -->
+
+                    <!-- center profile info section -->
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="card">
+                
+                
+                        <div class="d-flex align-content-center justify-content-between flex-column w-100 card-body">
+                           
+                            <div class="d-flex justify-content-between mt-2">
+                                <h4 class="card-title">Add New Questions</h4>
+                            </div>
+
+                            
+
+                            <div class="col-12">
+                                <form [formGroup]="ReactiveUserDetailsForm" (ngSubmit)="ReactiveUDFormOnSubmit()">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="UDCountry">Select Question</label>
+                                                <select id="UDCountry" formControlName="country" class="form-control" (click)="chooseField($event)"
+                                                    [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.question.errors }">
+                                                    <option value="text">Text</option>
+                                                    <option value="radio">Yes/No</option>
+                                                    <option value="checkbox">Multiple Choice Questions</option>
+                                                    <option value="upload">File Upload</option>
+                                                </select>
+                                                <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.question.errors" class="invalid-feedback">
+                                                    <div *ngIf="ReactiveUDForm.question.errors.required">questions is required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                    
+                            
+                                     
+                                    </div>
+
+                                    
+                                </form>
+                            </div>
+
+                            <form (ngSubmit)="(checkboxQuestionForm.form.valid)" #checkboxQuestionForm="ngForm">
+                          
+                            <div *ngIf="value == 'checkbox'" class="wrapper mt-2 bg-light-primary">
+                                <div class="d-flex justify-content-between mt-2 col-lg-12 col-sm-12 col-md-12">
+                                    <h4 class="card-title">Multiple Choice Questions</h4>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox"
+                                        [class.error]="checkboxQuestionForm.submitted && FUserNameRef.invalid"
+                                         class="custom-control-input" id="mcqschecbox" />
+                                        <label class="custom-control-label" for="mcqschecbox">
+                                            <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                            <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-sm-12 col-md-12">
+                            
+                                    <input type="text" id="jobtitle"
+                                    [class.error]="checkboxQuestionForm.submitted && FUserNameRef.invalid"
+
+                                      placeholder="Type your question here"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors }" />
+                                    <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors" class="invalid-feedback">
+                                        <div *ngIf="ReactiveUDForm.jobtitle.errors.required">Job Title is
+                                            required</div>
+                                    </div>
+
+                                    <label for="mcqs">Response Option</label>
+                                    <input type="text" id="mcqs" formControlName="jobtitle" placeholder="Response Option 1" class="form-control"
+                                        [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors }" />
+                                    <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors" class="invalid-feedback">
+                                        <div *ngIf="ReactiveUDForm.jobtitle.errors.required">Job Title is
+                                            required</div>
+                                    </div>
+                                    
+
+                            
+                                    <button class="btn btn-outline-primary mt-2 mr-2 mb-2" type="submit" (click)="multipleChoiceSubmit(checkboxQuestionForm)" rippleEffect>
+                                        <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                        Save
+                                    </button>
+                                    <button class="btn  mr-2 mt-2 mb-2 text-body" type="button" rippleEffect>
+                                        <span [data-feather]="'x'" [class]="'text-body mr-25'"></span>
+                                        Cancel
+                                    </button>
+                                </div>
+                            
+                            
+                            
+                            </div>
+                            </form>
+
+                            <form (ngSubmit)="(radioQuestionForm.form.valid)" #radioQuestionForm="ngForm">
+                            <div *ngIf="value == 'radio'"class="wrapper bg-light-primary">
+                                <div class="d-flex justify-content-between mt-2 col-12">
+                                    <h4 class="card-title">Yes/No</h4>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="resumecheckbox" />
+                                        <label class="custom-control-label" for="resumecheckbox">
+                                            <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                            <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-sm-12 col-md-12 ">
+                              
+                                    <input
+                                          type="text"
+                                          id="basic-icon-default-uname"
+                                          class="form-control dt-uname"
+                                          placeholder="Type your question here"
+                                          aria-label="jdoe1"
+                                          aria-describedby="basic-icon-default-uname2"
+                                          name="text"
+                                          [(ngModel)]="text"
+                                          [class.error]="radioQuestionForm.submitted && FUserNameRef.invalid"
+                                          #FUserNameRef="ngModel"
+                                          required
+                                        />
+                                    <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobtitle.errors" class="invalid-feedback">
+                                        <div *ngIf="ReactiveUDForm.jobtitle.errors.required">Job Title is
+                                            required</div>
+                                    </div>
+                                    <button class="btn btn-outline-primary mt-2 mr-2 mb-2" type="submit" (click)="submitRadio(radioQuestionForm)" rippleEffect>
+                                        <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                        Save
+                                    </button>
+                                    <button class="btn  mr-2 mt-2 mb-2 text-body" type="button" rippleEffect>
+                                        <span [data-feather]="'x'" [class]="'text-body mr-25'"></span>
+                                        Cancel
+                                    </button>
+                                </div>
+                                
+                            </div>
+                            </form>
+
+
+
+                            <form (ngSubmit)="(uploadQuestionForm.form.valid)" #uploadQuestionForm="ngForm">
+                            <div *ngIf="value == 'upload' " class="wrapper mt-2 bg-light-primary">
+                                <div class="d-flex justify-content-between mt-2 col-12">
+                                    <h4 class="card-title">File Upload</h4>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="resumecheckbox" />
+                                        <label class="custom-control-label" for="resumecheckbox">
+                                            <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                            <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-sm-12 col-md-12 ">
+                                   
+                                        <input
+                                          type="text"
+                                          id="basic-icon-default-uname"
+                                          class="form-control dt-uname"
+                                          placeholder="Type your question here"
+                                          aria-label="jdoe1"
+                                          aria-describedby="basic-icon-default-uname2"
+                                          name="text"
+                                          [(ngModel)]="text"
+                                          [class.error]="uploadQuestionForm.submitted && FUserNameRef.invalid"
+                                          #FUserNameRef="ngModel"
+                                          required
+                                        />
+
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="enableupload" checked />
+                                        <label class="custom-control-label" for="enableupload">Enable File Upload</label>
+                                    </div>
+
+                                    <button class="btn btn-outline-primary mt-2 mr-2 mb-2" type="submit" (click)="submitUpload(uploadQuestionForm)" rippleEffect>
+                                        <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                        Save
+                                    </button>
+                                    <button class="btn  mr-2 mt-2 mb-2 text-body" type="button" rippleEffect>
+                                        <span [data-feather]="'x'" [class]="'text-body mr-25'"></span>
+                                        Cancel
+                                    </button>
+                                </div>
+
+                               
+                            
+                            </div>
+                        </form>
+
+
+
+                            <form (ngSubmit)="(textQuestionForm.form.valid)" #textQuestionForm="ngForm">
+                            <div *ngIf="value == 'text' " class="wrapper mt-2 bg-light-primary">
+                                <div class="d-flex justify-content-between mt-2 col-12">
+                                    <h4 class="card-title">Text</h4>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="textcheckbox" />
+                                        <label class="custom-control-label" (click)="onHandleRequired(Pname)" id="values" for="textcheckbox">
+                                            <span class="switch-icon-left" data-ng-bind="true" #Pname><i data-feather="check"></i></span>
+                                            <span class="switch-icon-right" [value]="false" #Pname><i data-feather="x"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-sm-12 col-md-12 ">
+                                        <input
+                                          type="text"
+                                          id="basic-icon-default-uname"
+                                          class="form-control dt-uname"
+                                          placeholder="Type your question here"
+                                          aria-label="jdoe1"
+                                          aria-describedby="basic-icon-default-uname2"
+                                          name="text"
+                                          [(ngModel)]="text"
+                                          [class.error]="textQuestionForm.submitted && FUserNameRef.invalid"
+                                          #FUserNameRef="ngModel"
+                                          required
+                                        />
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="enableupload" checked />
+                                        <label class="custom-control-label" for="enableupload">Enable Text</label>
+                                    </div>
+
+                                    <button class="btn btn-outline-primary mt-2 mr-2 mb-2" (click)="submitText(textQuestionForm)" type="submit" rippleEffect>
+                                        <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                        Save
+                                    </button>
+                                    <button class="btn  mr-2 mt-2 mb-2 text-body" type="submit" rippleEffect>
+                                        <span [data-feather]="'x'" [class]="'text-body mr-25'"></span>
+                                        Cancel
+                                    </button>
+                                </div>
+
+                               
+                            
+                            </div>
+
+                        </form>
+                         
+                           
+
+                           
+
+
+
+
+                            <div class="d-flex justify-content-between mt-2">
+                                <h4 class="card-title">Preview</h4>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="preview" checked />
+                                    <label class="custom-control-label" for="preview">Enable Preview</label>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive border rounded mt-1">
+                                <table class="table bg-light-primary table-borderless">
+                                    <tbody>
+                
+                                        <tr>
+                                            <td>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="resume" />
+                                                    <label class="custom-control-label" for="resume">Resume</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input" id="resumecheckbox" />
+                                                    <label class="custom-control-label" for="resumecheckbox">
+                                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                
+                                        </tr>
+                
+                                        <tr>
+                                            <td>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="linkedin" />
+                                                    <label class="custom-control-label" for="linkedin">Linkedin URL</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input" id="linkedincheckbox" checked />
+                                                    <label class="custom-control-label" for="linkedincheckbox">
+                                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                
+                                        </tr>
+                
+                                        <tr>
+                                            <td>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="portfolio" />
+                                                    <label class="custom-control-label" for="portfolio">Portfolio</label>
+                                                </div>
+                                            </td>
+                
+                                            <td>
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input" id="portfoliocheckbox" />
+                                                    <label class="custom-control-label" for="portfoliocheckbox">
+                                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                
+                
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="coverletter" />
+                                                    <label class="custom-control-label" for="coverletter">Cover Letter</label>
+                                                </div>
+                                            </td>
+                                        
+                                            <td>
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input" id="coverlettercheckbox" />
+                                                    <label class="custom-control-label" for="coverlettercheckbox">
+                                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        
+                                        
+                                        </tr>
+                
+                                    </tbody>
+                                </table>
+                            </div>
+                
+                
+                           
+                
+                        </div>
+                
+                
+                    </div>
+                
+                </div>
+                    <!--/ center profile info section -->
+
+
+                </div>
+
+
+            </section>
+            <!--/ profile info section -->
+        </div>
+    </div>
+</div>

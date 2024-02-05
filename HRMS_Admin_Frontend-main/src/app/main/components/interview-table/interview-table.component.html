@@ -1,0 +1,87 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <!-- User List -->
+    <section class="users-list-wrapper">
+      <div class="card">
+        <ngx-datatable
+          [rows]="rows"
+          [rowHeight]="50"
+          class="bootstrap core-bootstrap"
+          [limit]="selectedOption"
+          [columnMode]="ColumnMode.force"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [scrollbarH]="true"
+        >
+          <ngx-datatable-column
+            name="Interviewer Name"
+            prop="created_by"
+            [width]="200"
+          ></ngx-datatable-column>
+          <ngx-datatable-column
+            name="From"
+            prop="startTime"
+            [width]="200"
+          ></ngx-datatable-column>
+          <ngx-datatable-column
+            name="To"
+            prop="endTime"
+            [width]="100"
+          ></ngx-datatable-column>
+          <ngx-datatable-column
+            name="Candidate Name"
+            prop="candidateId"
+            [width]="200"
+          ></ngx-datatable-column>
+          <ngx-datatable-column name="Actions" [width]="50" [sortable]="false">
+            <ng-template ngx-datatable-cell-template>
+              <div class="d-flex align-items-center">
+                <div ngbDropdown container="body">
+                  <a
+                    ngbDropdownToggle
+                    href="javascript:void(0);"
+                    class="hide-arrow"
+                    id="dropdownBrowserState"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i
+                      data-feather="more-vertical"
+                      class="text-primary cursor-pointer mr-50"
+                    ></i>
+                  </a>
+                  <div
+                    ngbDropdownMenu
+                    class="dropdown-menu-right"
+                    aria-labelledby="dropdownBrowserState"
+                  >
+                    <a
+                      href="javascript:void(0)"
+                      ngbDropdownItem
+                      class="d-flex align-items-center"
+                      ><i data-feather="file-text" class="mr-50"></i> Details</a
+                    >
+                    <a
+                      href="javascript:void(0)"
+                      ngbDropdownItem
+                      class="d-flex align-items-center"
+                      ><i data-feather="archive" class="mr-50"></i> Archive</a
+                    >
+                    <a
+                      href="javascript:void(0)"
+                      ngbDropdownItem
+                      class="d-flex align-items-center"
+                      ><i data-feather="trash-2" class="mr-50"></i> Delete</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </section>
+    <!--/ User List -->
+  </div>
+</div>

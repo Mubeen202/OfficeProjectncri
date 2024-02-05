@@ -1,0 +1,96 @@
+<div class=" invoice-preview-card card">
+    <div class=" p-1 pb-0">
+        <!-- Header Starts -->
+        <div class="d-flex justify-content-between flex-md-row flex-column  mt-0">
+            <div>
+                <h2 class="text-dark card-header">Cover Letter</h2>
+            </div>
+            <button class="btn btn-primary mr-2 mb-2" rippleEffect (click)="modalOpenForm(modalForm)">
+                <span [data-feather]="'plus'" [class]="'mr-25'"></span>
+                Upload
+            </button>
+
+        </div>
+        <!-- Header Ends -->
+       
+    </div>
+
+ 
+                <div class="login-form">
+                    <!-- Modal -->
+                    <ng-template #modalForm let-modal>
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel1">Inline Login Form</h4>
+                            <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" tabindex="0" ngbAutofocus>
+                            <form action="#">
+                                <div class="col-12">
+                                   
+                                    <label ng2FileDrop [uploader]="uploader" [ngClass]="{ 'file-drop-over': hasBaseDropZoneOver }"
+                                        (fileOver)="fileOverBase($event)"
+                                        class="my-drop-zone py-5 mb-3 text-center font-medium-5 text-uppercase file-drop-zone col-lg-12">
+                                        Upload your cover letter here
+                                        <input type="file" ng2FileSelect [uploader]="uploader" style="display: none" />
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-primary mr-2 mb-2" type="submit" (click)="modal.close('Accept click')" rippleEffect>
+                                <span [data-feather]="'save'" [class]="'mr-25'"></span>
+                                Save
+                            </button>
+                        </div>
+                    </ng-template>
+                    <!-- / Modal -->
+                </div>
+  
+    <!-- Address And Contact Starts -->
+    <div class="card-body pt-0">
+        <div class="row p-1">
+            <div class="col-12 p-0">
+                
+                <label for="basicTextarea"></label>
+                <h4 class="mb-2">Title : Content Writer</h4>
+                <fieldset class="form-group">
+                    <textarea class="form-control" id="basicTextarea"  rows="30">
+                        Dear Hiring Manager,
+                        
+                        I'm excited to be applying for the Writer position at ncri. As a qualified writer with three years of technical,
+                        analytical, and copywriting experience, I enjoy working on a variety of projects. Pushing myself as a writer has always
+                        been important to me, and I know that at River Tech, I'll have the opportunity to grow and expand my skills while
+                        creating quality content for your team.
+                        
+                        During my time at Hawaii Western, I majored in English with an emphasis in Business Writing. This enabled me to focus on
+                        developing my technical writing skills. In fact, I was able to present my thesis not only at Hawaii Western but at a
+                        local conference as well. This assisted me not only in developing my writing abilities but in helping me hone my public
+                        speaking skills.
+                        
+                        My previous position at Cloud Clearwater provided me with an incredible opportunity. I was able to revamp our company's
+                        internal memo system to reflect updated verbiage and wording. Additionally, I participated in creating social media and
+                        digital platform content for the organization. This helped expand our social media following by over 50% in just three
+                        months.
+                        
+                        Thank you for your time and consideration. As someone who is detail-oriented, driven, and dedicated to creating
+                        fantastic work, I'm looking forward to learning more about the Writer position at River Tech. Quality content creation
+                        is one of the most important things to me, and I know that as a writer on your team, I will have the opportunity to
+                        create interesting and memorable projects our clients will love.
+                        
+                        Sincerely,
+                        
+                        Kitty Allanson
+                    </textarea>
+                </fieldset>
+
+            </div>
+
+           
+
+
+        </div>
+    </div>
+
+</div>

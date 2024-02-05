@@ -1,0 +1,435 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+   
+    <!-- Horizontal Wizard -->
+    <section class="horizontal-wizard">
+      <div id="stepper1" class="bs-stepper ">
+        <div class="bs-stepper-header d-none">
+          <div class="step" data-target="#job-description">
+            <button class="step-trigger">
+              <span class="bs-stepper-box">1</span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Account Details</span>
+                <span class="bs-stepper-subtitle">Setup Account Details</span>
+              </span>
+            </button>
+          </div>
+          <div class="line"><i data-feather="chevron-right" class="font-medium-2"></i></div>
+          <div class="step" data-target="#apply-form">
+            <button class="step-trigger">
+              <span class="bs-stepper-box">2</span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Personal Info</span>
+                <span class="bs-stepper-subtitle">Add Personal Info</span>
+              </span>
+            </button>
+          </div>
+          <div class="line"><i data-feather="chevron-right" class="font-medium-2"></i></div>
+          <div class="step" data-target="#questions">
+            <button class="step-trigger">
+              <span class="bs-stepper-box">3</span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Address</span>
+                <span class="bs-stepper-subtitle">Add Address</span>
+              </span>
+            </button>
+          </div>
+          <div class="line"><i data-feather="chevron-right" class="font-medium-2"></i></div>
+          
+        </div>
+        <div class="bs-stepper-content">
+          <form (ngSubmit)="(HWForm.form.valid)" #HWForm="ngForm">
+            <div id="job-description" class="content">
+              <app-job-description-card></app-job-description-card>
+              <form #accountDetailsForm="ngForm">
+                <div class="d-flex justify-content-between">
+                  <button
+                    (click)="horizontalWizardStepperPrevious()"
+                    class="btn btn-outline-secondary btn-prev"
+                    
+                    rippleEffect
+                    [routerLink]="'/careers/joblisting'"
+                  >
+                    <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
+                    <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                  </button>
+                  <button
+                    (click)="horizontalWizardStepperNextWithoutData()"
+                    type="submit"
+                    class="btn btn-primary btn-next"
+                    rippleEffect
+                  >
+                    <span class="align-middle d-sm-inline-block d-none">Next</span>
+                    <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div id="apply-form" class="content">
+              <form #personalInfoForm="ngForm">
+                <div class=" invoice-preview-card">
+                  <div class="pb-0">
+                    <!-- Header Starts -->
+                    <div class="d-flex justify-content-between flex-md-row flex-column  mt-0">
+                      <div>
+                          <h1 class="text-dark ">Apply For This Job</h1>
+                      </div>
+                     
+                    </div>
+                    <!-- Header Ends -->
+                  </div>
+              
+                  <hr class="invoice-spacing" />
+               
+                  <app-custom-uploader></app-custom-uploader>
+
+                  <div class="row">
+                    
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="firstname">First Name</label>
+                    <input
+                      [(ngModel)]="FirstName"
+                      #TDNameRef="ngModel"
+                      required
+                      type="text"
+                      name="firstname"
+                      id="firstname"
+                      class="form-control"
+                      [class.error]="!TDNameRef.valid && personalInfoForm.submitted"
+                      placeholder="johndoe"
+                    />
+                    <span *ngIf="personalInfoForm.submitted && TDNameRef.invalid" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="TDNameRef.errors.required"
+                        >This field is required!</small
+                      >
+                    </span>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="lastname">Last Name</label>
+                    <input
+                      [(ngModel)]="LastName"
+                      #TDNameRef="ngModel"
+                      required
+                      type="text"
+                      name="lastname"
+                      id="lastname"
+                      class="form-control"
+                      [class.error]="!TDNameRef.valid && personalInfoForm.submitted"
+                      placeholder="johndoe"
+                    />
+                    <span *ngIf="personalInfoForm.submitted && TDNameRef.invalid" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="TDNameRef.errors.required"
+                        >This field is required!</small
+                      >
+                    </span>
+                  </div>
+                 
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="email">Email</label>
+                    <input
+                      [(ngModel)]="email"
+                      #TDEmailRef="ngModel"
+                      required
+                      email
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="form-control"
+                      [class.error]="!TDEmailRef.valid && personalInfoForm.submitted"
+                      placeholder="john.doe@email.com"
+                      aria-label="john.doe"
+                    />
+                    <span *ngIf="personalInfoForm.submitted" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="!TDEmailRef.valid">Email must be valid!</small>
+                    </span>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="lastorg">Last Organization</label>
+                    <input
+                      [(ngModel)]="LastOrganization"
+                      #TDNameRef="ngModel"
+                      required
+                      type="text"
+                      name="lastorg"
+                      id="lastorg"
+                      class="form-control"
+                      [class.error]="!TDNameRef.valid && personalInfoForm.submitted"
+                      placeholder="Last Organization"
+                    />
+                    <span *ngIf="personalInfoForm.submitted && TDNameRef.invalid" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="TDNameRef.errors.required"
+                        >This field is required!</small
+                      >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="PhoneNumber">Phone Number</label>
+                    <input
+                      [(ngModel)]="PhoneNumber"
+                      #TDPhoneRef="ngModel"
+                      required
+                      type="tel"
+                      name="PhoneNumber"
+                      id="PhoneNumber"
+                      class="form-control"
+                      [class.error]="!TDPhoneRef.valid && personalInfoForm.submitted"
+                      placeholder="0300-12345678"
+                      
+                    />
+                    <span *ngIf="personalInfoForm.submitted" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="!TDPhoneRef.valid">Phone Number must be valid!</small>
+                    </span>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="address">Address</label>
+                    <input
+                      [(ngModel)]="address"
+                      #addressRef="ngModel"
+                      required
+                      type="text"
+                      id="address"
+                      name="address"
+                      class="form-control"
+                      [class.error]="addressForm.submitted && stateRef.invalid"
+                      placeholder="98  Borough bridge Road, Birmingham"
+                    />
+                    <span *ngIf="addressForm.submitted && stateRef.invalid" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="addressRef.errors.required"
+                        >This field is required!</small
+                      >
+                    </span>
+                  </div>
+                 
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="state">State</label>
+                    <input
+                      [(ngModel)]="state"
+                      #stateRef="ngModel"
+                      required
+                      type="text"
+                      id="state"
+                      name="state"
+                      class="form-control"
+                      [class.error]="personalInfoForm.submitted && stateRef.invalid"
+                      placeholder="98  Borough bridge Road, Birmingham"
+                    />
+                    <span *ngIf="personalInfoForm.submitted && stateRef.invalid" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="stateRef.errors.required"
+                        >This field is required!</small
+                      >
+                    </span>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="zipcode">Zip Code</label>
+                    <input
+                      [(ngModel)]="zipcode"
+                      #zipcodeRef="ngModel"
+                      required
+                      type="number"
+                      name="zipcode"
+                      id="zipcode"
+                      class="form-control"
+                      [class.error]="!zipcodeRef.valid && personalInfoForm.submitted"
+                      placeholder="22010"
+                      
+                    />
+                    <span *ngIf="personalInfoForm.submitted" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="!zipcodeRef.valid">Zip Code is required!</small>
+                    </span>
+                  </div>
+                 
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 col-12 mb-2">
+                    <div class="form-group">
+                        <label for="basicSelect">Country</label>
+                        <select class="form-control" id="basicSelect" (change)="handleSelectCountry($event)" required>
+                            <option hidden>Select Country</option>
+                          <option value="Canada">Canada</option>
+                          <option value="USA">USA</option>
+                          <option value="Germany">Germany</option>
+                        </select>
+                      </div>
+                  </div>
+    
+                  <div class="col-md-6 col-12 mb-2">
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <select class="form-control" id="language" (change)="handleSelectLanguage($event)" required>
+                            <option hidden>Select Language</option>
+                          <option value="English">English</option>
+                          <option value="French">French</option>
+                          <option value="German">German</option>
+                        </select>
+                      </div>
+                  </div>
+    
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="zipcode" >Current Salary</label>
+                    <input required type="number" name="current_salary" [(ngModel)]="currentSalary" id="current_salary"
+                      class="form-control" placeholder="2000" />
+                  
+                  </div>
+    
+              <div class="form-group col-md-6">
+                <label class="form-label" for="zipcode">Expected Salary</label>
+                <input required type="number" name="expected_salary"  [(ngModel)]="expectedSalay" id="expected_salary" class="form-control" placeholder="4000" />
+              
+              </div>
+
+                 
+                </div>
+
+
+                <div class="d-flex justify-content-between">
+                  <button
+                    type="button"
+                    (click)="horizontalWizardStepperPrevious()"
+                    class="btn btn-primary btn-prev"
+                    rippleEffect
+                  >
+                    <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
+                    <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                  </button>
+                  <!-- <button
+                    (click)="horizontalWizardStepperNext(personalInfoForm)"
+                    class="btn btn-primary btn-next"
+                    rippleEffect
+                  >
+                    <span class="align-middle d-sm-inline-block d-none">Next</span>
+                    <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
+                  </button> -->
+                  <button
+                  (click)="horizontalWizardStepperNext(personalInfoForm)"
+                  class="btn btn-primary btn-next"
+                  rippleEffect
+                >
+                  <span class="align-middle d-sm-inline-block d-none">Next</span>
+                  <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
+                </button>
+                </div>
+              </div>
+              </form>
+            </div>
+            <div id="questions" class="content">
+              <form #addressForm="ngForm">
+                <div class=" invoice-preview-card">
+                  <div class=" pb-0">
+                    <!-- Header Starts -->
+                    <div class="d-flex justify-content-between flex-md-row flex-column  mt-0">
+                      <div>
+                          <h1 class="text-dark ">Few Questions To Know You Better</h1>
+                      </div>
+                     
+                    </div>
+                    <!-- Header Ends -->
+                  </div>
+              
+                  <hr class="invoice-spacing" />
+              
+                  <!-- Address And Contact Starts -->
+                
+                  <div class="card-apply-job">
+                      <div class="card-body">
+                  <!-- Radio Custom Start -->
+
+                 
+                  <ol >
+                    <ng-container  *ngFor="let question of jobQuestions" [ngSwitch]="question.type"> 
+                    <li class="mb-2"> 
+                      <p class="card-text mb-0">
+                        {{question.question}}
+                        </p>
+                         
+
+                          <div class="demo-inline-spacing" *ngSwitchCase="'text'"> 
+                            <div class="form-group custom-control col-md-6">
+                              <input required type="text" name="text" id="" (input)="onText($event.target.value, question)"
+                                class="form-control custom-file-label" placeholder="" />
+                            </div>
+                          
+                          </div>
+
+                          <div class="demo-inline-spacing" *ngSwitchCase="'radio'">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="customRadio3" name="radio" (change)="radioEvent($event, question)" name="customRadio3" class="custom-control-input"  value="Yes"/>
+                              <label class="custom-control-label" for="customRadio3" >Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="customRadio4" name="radio" (change)="radioEvent($event, question)" name="customRadio3" class="custom-control-input"  value="No"/>
+                              <label class="custom-control-label" for="customRadio4" >No</label>
+                            </div>
+                          </div>
+                         
+                          <div class="demo-inline-spacing" *ngSwitchCase="'checkbox'">
+                              <ng-container *ngFor="let options of question.values">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" name="checkbox" class="custom-control-input" (change)="onChange(options, $event.target.checked, question)"   id="'{{options}}'" ng-model="selectedList[options]"/>
+                              <label class="custom-control-label" for="'{{options}}'">{{options}}</label>
+                            </div>
+                            </ng-container>
+                          </div>
+                          <div class="demo-inline-spacing" *ngSwitchCase="'textarea'">
+                           
+                            <fieldset class="form-group ">
+                              <textarea class="form-control" [(ngModel)]= 'textarea' name="textarea" (input)="doSomething(question, $event)" id="basicTextarea" rows="3" placeholder=""></textarea>
+                            </fieldset>
+                          </div>
+
+                          <div class="demo-inline-spacing" *ngSwitchCase="'upload'">
+                            <div class="form-group col-md-6">
+                            
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="fileUploadQuestion" (change)="uploadFile($event, question)" id="customFile" />
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                              </div>
+                            </div>
+                          </div>
+
+                       
+                    </li>
+                  </ng-container>
+                  </ol>
+                 
+                    <!-- Radio Custom Ends -->
+                       
+                      </div>
+                    </div>
+                  
+                </div>
+                
+                <div class="d-flex justify-content-between">
+                  <button
+                    type="button"
+                    (click)="horizontalWizardStepperPrevious()"
+                    class="btn btn-primary btn-prev"
+                    rippleEffect
+                  >
+                    <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
+                    <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                  </button>
+                  <button class="btn btn-success btn-submit" rippleEffect (click)="onSubmit()">Submit</button>
+                </div>
+              </form>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--/ Horizontal Wizard -->
+
+    
+  </div>
+</div>

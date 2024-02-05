@@ -1,0 +1,160 @@
+<div class="row">
+  <!-- left profile info section -->
+  <div class="col-lg-4 col-12 order-2 order-lg-1 d-flex align-items-stretch ">
+      <!-- Latest Activity -->
+      <div class="card w-100 ">
+        <div class="card-body">
+          <div class="container-fluid">
+              <h2 class="mb-75">Details</h2>
+             
+          </div>
+          <div class="container-fluid row">
+              <div class="mt-2 col-6">
+                  <h6 class="mb-75">Candidate Name</h6>
+                  
+              </div>
+              <div class="mt-2 col-6">
+                  <p class="mb-75">Shoohira</p>
+                 
+              </div>
+              
+              <div class="mt-2 col-6">
+                <h6 class="mb-75">Interview Type</h6>
+                
+            </div>
+            <div class="mt-2 col-6">
+                <p class="mb-75">Good</p>
+               
+            </div>
+
+            <div class="mt-2 col-6">
+              <h6 class="mb-75">Posting Title</h6>
+              
+          </div>
+          <div class="mt-2 col-6">
+              <p class="mb-75">Post</p>
+             
+          </div>
+
+          <div class="mt-2 col-6">
+            <h6 class="mb-75">Location</h6>
+            
+        </div>
+        <div class="mt-2 col-6">
+            <p class="mb-75">Islamabad</p>
+           
+        </div>
+          </div>
+
+      </div>
+      </div>
+      <!--/ Latest Activity -->
+  </div>
+  <!--/ left profile info section -->
+
+  <!-- center profile info section -->
+
+
+  <!-- center profile info section -->
+  <div class="col-lg-8 col-12 order-2 order-lg-1 d-flex align-items-stretch">
+      <!-- about -->
+      <div class="card w-100">
+          <div class="card-body">
+              <div class="container-fluid">
+                  <h2 class="mb-75">Score</h2>
+                 
+              </div>
+              <div class="container-fluid row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                      <label for="jobStatus">Recommendation</label>
+                      <select #Recommendation (change)="getRecomendationValue($event)" id="jobStatus" formControlName="jobStatus" class="form-control">
+                          <option value="">Select Recommendation</option>
+                          <option value="Hired">Hired</option>
+                          <option value="Inreview ">Inreview</option>
+                          <option value="Not Hired">Not Hired</option>
+                      </select>
+                      <!-- <input type="text" id="jobStatus" formControlName="jobStatus" placeholder="Job Status" class="form-control"
+                          [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.jobStatus.errors }" />
+                      <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.jobStatus.errors" class="invalid-feedback">
+                          <div *ngIf="ReactiveUDForm.jobStatus.errors.required">Job Status is
+                              required</div>
+                      </div> -->
+                  </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-bordered" >
+                  <thead>
+                    <tr>
+                      <th>FACTORS</th>
+                      <th>SCORE OF 5</th>
+                      <th>COMMENT</th>
+                      <th>SAMPLE QUESTION</th>
+                    </tr>
+                  </thead>
+                  <tbody >
+                   
+                    <tr *ngFor="let data of jobData">
+                      <td>{{data.factorId.title}}</td>
+                      <td>
+                        <input  type="number"  class="form-control"
+                        min="0" 
+                        max="5" 
+                          [(ngModel)]="data.score"
+                          (change)="getScore($event.target.value, data.factorId.id)"
+                                            placeholder="Score"
+                                                 />
+
+                                                </td>
+                      <td>
+                        <div class="avatar-group">
+                          <textarea type="textarea" cols="300" rows="1"  class="form-control"
+                          [(ngModel)]="data.comment" 
+                          (change)="getComment($event.target.value, data.factorId.id)"
+                          placeholder=" Enter Comment"
+                             > </textarea>
+                         
+                        </div>
+                      </td>
+                      <td>{{data.factorId.sampleQuestion}}</td>
+                    
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="jobStatus">Overall Score [Average]</label>
+                        <select class="form-control">
+                          <option value="overAllScore" disabled selected hidden>{{overAllScore}}</option>
+                           
+                        </select>
+                    </td>
+                    </tr>
+
+                    <tr>
+                      <td> 
+
+                        <label for="jobStatus">Overall Comment</label>
+                        <textarea type="textarea" (change)="overAllCommentsFunction($event.target.value)"  rows="4" cols="1800" id="UDJobDescriptions" formControlName="descriptions" class="form-control"
+                        placeholder=" Enter Overall Comment"
+                           > </textarea>
+                    </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-sm-9 offset-sm-3">
+                <button type="submit" rippleEffect class="btn btn-primary mr-1" (click)="onSubmit()">Submit</button>
+                <button type="reset" rippleEffect class="btn btn-outline-secondary">Reset</button>
+              </div>
+
+              </div>
+
+          </div>
+      </div>
+      <!--/ about -->
+
+  </div>
+  <!--/ center profile info section -->
+
+</div>

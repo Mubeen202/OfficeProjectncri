@@ -1,0 +1,93 @@
+<!-- compose email -->
+<ng-container *ngIf="isComposeOpen === true">
+  <div class="modal modal-sticky d-block" id="compose-mail">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content p-0">
+        <div class="modal-header">
+          <h5 class="modal-title">Add A Note</h5>
+          <div class="modal-actions">
+            <a href="javascript:void(0);" class="text-body mr-75" (click)="closeCompose()"
+              ><i data-feather="minus"></i
+            ></a>
+            <a href="javascript:void(0);" class="text-body mr-75"><i data-feather="maximize-2"></i></a>
+            <a class="text-body" data-dismiss="modal" aria-label="Close" (click)="closeCompose()"
+              ><i data-feather="x"></i
+            ></a>
+          </div>
+        </div>
+        <div class="modal-body flex-grow-1 p-0">
+          <form class="compose-form">
+            <div class="form-group">
+              <quill-editor
+                name="addDescription"
+                customToolbarPosition="'bottom'"
+                class="border-bottom-0"
+               [(ngModel)]="notes"
+                placeholder="Message"
+
+              >
+                <div quill-editor-toolbar>
+                  <div class="desc-toolbar border-top-0">
+                    <span class="ql-formats mr-0">
+                      <button class="ql-bold"></button>
+                      <button class="ql-italic"></button>
+                      <button class="ql-underline"></button>
+                      <button class="ql-align"></button>
+                      <button class="ql-link"></button>
+                    </span>
+                  </div>
+                </div>
+              </quill-editor>
+            </div>
+            <div class="compose-footer-wrapper">
+              <div class="btn-wrapper d-flex align-items-center">
+                <div class="btn-group dropup mr-1" ngbDropdown>
+                  <button type="button" class="btn btn-primary" (click)="closeCompose()" rippleEffect>Save</button>
+                
+                </div>
+              
+             
+              </div>
+              <div class="footer-action d-flex align-items-center">
+                <div ngbDropdown>
+                  <a ngbDropdownToggle class="hide-arrow">
+                    <i
+                      class="cursor-pointer mr-50"
+                      data-feather="more-vertical"
+                      [size]="18"
+                      role="button"
+                      id="composeActions"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                    </i>
+                  </a>
+                  <div ngbDropdownMenu aria-labelledby="composeActions">
+                    <a ngbDropdownItem href="javascript:void(0);">
+                      <span class="align-middle">Add Label</span>
+                    </a>
+                    <a ngbDropdownItem href="javascript:void(0);">
+                      <span class="align-middle">Plain text mode</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a ngbDropdownItem href="javascript:void(0);">
+                      <span class="align-middle">Print</span>
+                    </a>
+                    <a ngbDropdownItem href="javascript:void(0);">
+                      <span class="align-middle">Check Spelling</span>
+                    </a>
+                  </div>
+                </div>
+                <button type="reset" class="btn p-0" (click)="closeCompose()">
+                  <i data-feather="trash" [size]="18" class="cursor-pointer" data-dismiss="modal"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<!--/ compose email -->

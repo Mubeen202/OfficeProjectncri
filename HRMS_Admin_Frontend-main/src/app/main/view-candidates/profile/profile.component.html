@@ -1,0 +1,203 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <div id="user-profile">
+      <!-- profile header -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card profile-header mb-2">
+            <!-- profile cover photo -->
+            <img
+              class="card-img-top"
+              [src]="data.profileData.header.coverImg"
+              alt="User Profile Image"
+            />
+            <!--/ profile cover photo -->
+
+            <div class="position-relative">
+              <!-- profile picture -->
+              <div class="profile-img-container d-flex align-items-center">
+                <div class="profile-img">
+                  <img
+                  *ngIf="currrentRow.profileImage !== ''"
+                    [src]=[currrentRow.profileImage]
+                    class="rounded img-fluid"
+                    alt="Card image"
+                  />
+
+                  <div *ngIf="currrentRow.profileImage === ''" class="avatar bg-light-danger mr-50">
+                    <div class="avatar-content-profile" height="240" width="120">{{ currrentRow.firstName.charAt(0).toUpperCase() }} {{ currrentRow.lastName.charAt(0).toUpperCase() }}</div>
+                  </div>
+                  
+
+                </div>
+                <!-- profile title -->
+                <div class="profile-title ml-3">
+                  <h2 class="text-white">
+                    {{ currrentRow.firstName }} {{ currrentRow.lastName }}
+                  </h2>
+                  <p class="text-white">{{ currrentRow.email }}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- tabs pill -->
+            <div class="profile-header-nav">
+              <!-- navbar -->
+              <nav
+                class="navbar navbar-expand-md navbar-light justify-content-end justify-content-md-between w-100"
+              >
+                <button
+                  class="btn btn-icon navbar-toggler"
+                  type="button"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  (click)="toggleMenu = !toggleMenu"
+                  rippleEffect
+                >
+                  <i data-feather="align-justify" class="font-medium-5"></i>
+                </button>
+
+                <!-- collapse  -->
+                <div
+                  class="collapse navbar-collapse"
+                  id="navbarSupportedContent"
+                  [ngbCollapse]="toggleMenu"
+                >
+                  <div
+                    class="profile-tabs d-flex justify-content-between flex-wrap mt-1 mt-md-0"
+                  >
+                    <ul class="nav nav-pills mb-0" ngbNav #nav="ngbNav">
+                      <li class="nav-item" ngbNavItem>
+                        <a class="nav-link font-weight-bold" ngbNavLink>
+                          <span class="d-none d-md-block">Profile</span>
+                          <i data-feather="rss" class="d-block d-md-none"></i>
+                        </a>
+                        <ng-template ngbNavContent>
+                          <app-candidate-details [currentUser]="currrentRow"> </app-candidate-details>
+                          <app-timeline [currentUser]="currrentRow"> </app-timeline>
+                        </ng-template>
+                      </li>
+
+                      <li class="nav-item" ngbNavItem>
+                        <a
+                          class="nav-link font-weight-bold"
+                          href="javascript:void(0)"
+                          ngbNavLink
+                        >
+                          <span class="d-none d-md-block">Notes</span>
+                          <i data-feather="image" class="d-block d-md-none"></i>
+                        </a>
+                        <ng-template ngbNavContent>
+                          <app-email> </app-email>
+                        </ng-template>
+                      </li>
+
+                      <li class="nav-item" ngbNavItem>
+                        <a
+                          class="nav-link font-weight-bold"
+                          id="notes-tab"
+                          ngbNavLink
+                        >
+                          <span class="d-none d-md-block">Email</span>
+                          <i data-feather="info" class="d-block d-md-none"></i>
+                        </a>
+                        <ng-template ngbNavContent>
+                          <!-- <ngb-alert [type]="'primary'" [dismissible]="false">
+                            <div class="alert-body">
+                              <strong>Coming Soon</strong>
+                            </div>
+                          </ngb-alert> -->
+                          <app-new-email></app-new-email>
+                        </ng-template>
+                      </li>
+                      <li class="nav-item" ngbNavItem>
+                        <a class="nav-link font-weight-bold" ngbNavLink>
+                          <span class="d-none d-md-block">Interview</span>
+                          <i data-feather="users" class="d-block d-md-none"></i>
+                        </a>
+                        <ng-template ngbNavContent>
+                          <div class="card">
+                            <div class="card-body">
+                              <app-calendar></app-calendar>
+                              <!-- <app-interview-table> </app-interview-table> -->
+
+                              <app-evaluation-info-table>
+                              </app-evaluation-info-table>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </li>
+
+                      <li class="nav-item" ngbNavItem>
+                        <a class="nav-link font-weight-bold" ngbNavLink>
+                          <span class="d-none d-md-block">Cover Letter</span>
+                          <i data-feather="users" class="d-block d-md-none"></i>
+                        </a>
+                        <ng-template ngbNavContent>
+                          <app-cover-letter> </app-cover-letter>
+                        </ng-template>
+                      </li>
+
+                      <li class="nav-item" ngbNavItem>
+                        <a class="nav-link font-weight-bold" ngbNavLink>
+                          <span class="d-none d-md-block"
+                            >Background Check</span
+                          >
+                          <i data-feather="users" class="d-block d-md-none"></i>
+                        </a>
+                        <ng-template ngbNavContent>
+                          <app-background-check></app-background-check>
+                        </ng-template>
+                      </li>
+
+                      <li class="nav-item" ngbNavItem>
+                        <a class="nav-link font-weight-bold" ngbNavLink>
+                          <span class="d-none d-md-block">Identity Check</span>
+                          <i data-feather="users" class="d-block d-md-none"></i>
+                        </a>
+                        <ng-template ngbNavContent>
+                          <app-identity-check> </app-identity-check>
+                        </ng-template>
+                      </li>
+
+                      <!-- <li ngbDropdown class="nav-item" placement="top-right" ngbNavItem>
+                                                <a href (click)="false" class="nav-link font-weight-bold" ngbDropdownToggle >Checks</a>
+                                                 -->
+                      <!-- <div ngbDropdownMenu>
+                                                    <a class="nav-link font-weight-bold" ngbNavLink ngbDropdownItem>
+                                                        <span class="d-none d-md-block">Background Check</span>
+                                                        <i data-feather="users" class="d-block d-md-none"></i>
+                                                    </a>
+                                                
+                                                    <button ngbDropdownItem ngbNavLink>Identity Check</button>
+                                                </div> -->
+                      <!-- </li> -->
+                    </ul>
+                    <!-- edit button -->
+                    <button class="btn btn-primary btn-sm" rippleEffect>
+                      <i data-feather="edit" class="d-block d-md-none"></i>
+                      <span class="font-weight-bold d-none d-md-block"
+                        >Download Resume</span
+                      >
+                    </button>
+                  </div>
+                </div>
+                <!--/ collapse  -->
+              </nav>
+              <!--/ navbar -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ profile header -->
+
+      <!-- profile info section -->
+      <section id="profile-info">
+        <div [ngbNavOutlet]="nav" class="mt-1"></div>
+      </section>
+      <!--/ profile info section -->
+    </div>
+  </div>
+</div>

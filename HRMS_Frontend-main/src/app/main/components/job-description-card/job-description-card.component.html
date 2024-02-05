@@ -1,0 +1,51 @@
+<div class=" invoice-preview-card">
+    <div class=" pb-0">
+      <!-- Header Starts -->
+      <div class="d-flex justify-content-between flex-md-row flex-column  mt-0">
+        <div>
+            <h1 class="text-dark ">{{jobItem.title}}</h1>
+        </div>
+       
+      </div>
+      <!-- Header Ends -->
+    </div>
+
+    <hr class="invoice-spacing" />
+
+    <!-- Address And Contact Starts -->
+    <div class="card-body pt-0">
+      <div class="row invoice-spacing">
+        <div class="col-12 p-0">
+          <h4 class="mb-2">Job Description</h4>
+          <div class="text-center my-1 col-12 " [ngClass]="{'d-none' : isEmpty>0}">
+            <div class="spinner-border" role="status" aria-hidden="true"></div>
+          </div>
+        
+          <p class="card-text mb-25">
+         {{jobItem.description}}
+              </p>
+         
+
+              
+        </div>
+
+        <div class="col-12 p-0 mt-2">
+          <h4 class="mb-2">Requirements</h4>
+          <ul>
+              <li>{{jobItem.requirments}} </li>
+              
+              
+          </ul>
+        </div>
+
+        <div class="col-12 p-0 mt-2">
+          <h4 class="mb-2">Qualifications</h4>
+          <ul>
+              <li>{{jobItem.jobSummry}} </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>

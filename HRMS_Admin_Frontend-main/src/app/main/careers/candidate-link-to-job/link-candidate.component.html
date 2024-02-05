@@ -1,0 +1,200 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- User List -->
+        <section class="users-list-wrapper">
+
+            <div class="card">
+                <h2 class="card-header">Link a Candidate to Job</h2>
+                <hr>
+                <section id="reactive-forms" class="card-body">
+                    <div class="row">
+                        
+                        <div class="col-12">
+                          
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form [formGroup]="ReactiveUserDetailsForm" (ngSubmit)="ReactiveUDFormOnSubmit()">
+                                                <div class="row">
+
+                                                   <!-- <div class="col-6">
+                                                    <label>Resume</label>
+                                                    <label ng2FileDrop [uploader]="uploader" [ngClass]="{ 'file-drop-over': hasBaseDropZoneOver }"
+                                                        (fileOver)="fileOverBase($event)"
+                                                        class="my-drop-zone py-5 mb-3 text-center font-medium-5 text-uppercase file-drop-zone col-lg-12">
+                                                        Upload your latest resume here
+                                                        <input type="file" ng2FileSelect [uploader]="uploader" style="display: none" />
+                                                    </label>
+                                                   </div>
+
+                                                <div class="col-6">
+                                                    <label>Cover Letter</label>
+                                                    <label ng2FileDrop [uploader]="uploader" [ngClass]="{ 'file-drop-over': hasBaseDropZoneOver }"
+                                                        (fileOver)="fileOverBase($event)"
+                                                        class="my-drop-zone py-5 mb-3 text-center font-medium-5 text-uppercase file-drop-zone col-lg-12">
+                                                        Upload your cover letter here
+                                                        <input type="file" ng2FileSelect [uploader]="uploader" style="display: none" />
+                                                    </label>
+                                                </div> -->
+
+
+                                                
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="job">Job </label>
+                                                        <select  id="job" formControlName="job" class="form-control"
+                                                        (change)="selectJobChangeHandler($event)"
+                                                         [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.job.errors }" >
+                                                         <option *ngFor="let job of jobsList" [value]="job.id">{{job.title}}</option>
+                                                            </select>
+                                                      
+                                                        <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.job.errors" class="invalid-feedback">
+                                                            <div *ngIf="ReactiveUDForm.jobType.errors.required">job is required</div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="canidate">Candidate </label>
+                                                        <select  id="canidate" formControlName="canidate" class="form-control"
+                                                        (change)="selectCandidateChangeHandler($event)"
+                                                         [ngClass]="{ 'is-invalid': ReactiveUDFormSubmitted && ReactiveUDForm.canidate.errors }" >
+                                                         <option *ngFor="let canidate of canidatesList" [value]="canidate.id">{{canidate.firstName}}</option>
+                                                            </select>
+                                                      
+                                                        <div *ngIf="ReactiveUDFormSubmitted && ReactiveUDForm.canidate.errors" class="invalid-feedback">
+                                                            <div *ngIf="ReactiveUDForm.canidateType.errors.required">canidate is required</div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+
+
+                                                    <div id="questions" class="content" *ngIf="data">
+                                                        <form #addressForm="ngForm">
+                                                          <div class=" invoice-preview-card">
+                                                            <div class=" pb-0">
+                                                             
+                                                              <div class="d-flex justify-content-between flex-md-row flex-column  mt-0">
+                                                                <div>
+                                                                  <h4 class="text-dark ">Question realted to this job</h4>
+                                                                </div>
+                                          
+                                                              </div>
+                                                              <!-- Header Ends -->
+                                                            </div>
+                                          
+                                                            <hr class="invoice-spacing" />
+                                          
+                                                            <!-- Address And Contact Starts -->
+                                          
+                                                            <div class="card-apply-job">
+                                                              <div class="card-body">
+                                                                <!-- Radio Custom Start -->
+                                          
+                                          
+                                                                <ol>
+                                                                  <ng-container *ngFor="let question of currentRow; let i=index;" [ngSwitch]="question.questionId.type">
+                                                                   
+                                                                    <li class="mb-2">
+                                                                      <p class="card-text mb-0">
+                                                                        {{question.questionId.question}}
+                                                                      </p>
+                                          
+                                          
+                                                                      <div class="demo-inline-spacing" *ngSwitchCase="'text'">
+                                                                        <div class="form-group custom-control col-md-6">
+                                                                          <input required type="text" [name]="question.questionId.name" [required]="question.flag"
+                                                                            id="" 
+                                                                            (change)="onText($event.target.value, question)" class="form-control custom-file-label"
+                                                                            placeholder="" />
+                                                                        </div>
+                                          
+                                                                    
+                                          
+                                          
+                                          
+                                                                      </div>
+                                          
+                                                                      <div class="demo-inline-spacing" *ngSwitchCase="'radio'">
+                                                                        <div class="custom-control custom-radio">
+                                                                        <input type="radio" value="yes" (change)="radioEvent($event.target.value, question, question.selected)" [(ngModel)]="question.selected"  [name]='i+1'>
+                                                                            <span>Yes</span>
+                                                                          </div>
+                                                                          <div class="custom-control custom-radio">
+                                                                          <input type="radio" value="no" (change)="radioEvent($event.target.value, question, question.selected)"  [(ngModel)]="question.selected"  [name]='i+1' >
+                                                                            <span>No</span><br>
+                                                                          </div>
+                                                                      </div>
+                                          
+                                                                      <div class="demo-inline-spacing" *ngSwitchCase="'checkbox'">
+                                                                        <ng-container *ngFor="let options of question.values">
+                                                                          <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" name="checkbox" class="custom-control-input"
+                                                                              (change)="checkBoxEvent(options, $event.target.checked, question)" id="'{{options}}'"
+                                                                              ng-model="selectedList[options]" />
+                                                                            <label class="custom-control-label" for="'{{options}}'">{{options}}</label>
+                                                                          </div>
+                                                                        </ng-container>
+                                                                      </div>
+                                                                      <div class="demo-inline-spacing" *ngSwitchCase="'textarea'">
+                                          
+                                                                        <fieldset class="form-group ">
+                                                                          <textarea class="form-control" [(ngModel)]='textarea' name="textarea"
+                                                                            (input)="textareaChange(question, $event)" id="basicTextarea" rows="3"
+                                                                            placeholder=""></textarea>
+                                                                        </fieldset>
+                                                                      </div>
+                                          
+                                                                      <div class="demo-inline-spacing" *ngSwitchCase="'upload'">
+                                                                        <div class="form-group col-md-6">
+                                          
+                                                                          <div class="custom-file">
+                                                                            <input type="file" class="custom-file-input" name="fileUploadQuestion"
+                                                                              (change)="uploadFile($event, question)" id="customFile" />
+                                                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                          
+                                          
+                                                                    </li>
+                                                                  </ng-container>
+                                                                </ol>
+                                          
+                                          
+                                                              </div>
+                                                            </div>
+                                          
+                                                          </div>
+                                          
+                                                      
+                                                        </form>
+                                                      </div>
+
+                                                    
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <button class="btn btn-primary mr-2 mb-2" type="submit" rippleEffect>Save</button>
+                                                            <button class="btn btn-outline-primary mr-2 mb-2" type="reset" rippleEffect>Discard</button>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                          
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </section>
+        <!--/ User List -->
+    </div>
+
+
+</div>

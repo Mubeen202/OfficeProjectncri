@@ -1,0 +1,56 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <div class="app-calendar overflow-hidden border">
+      <div class="row no-gutters">
+        <!-- calendar main sidebar -->
+        <!-- <core-sidebar
+          class="col app-calendar-sidebar flex-grow-0 overflow-hidden d-flex flex-column"
+          name="calendar-main-sidebar"
+          overlayClass="body-content-overlay"
+          collapsibleSidebar="bs-gt-lg"
+        >
+          <app-calendar-main-sidebar></app-calendar-main-sidebar>
+        </core-sidebar> -->
+        <!--/ calendar main sidebar -->
+
+        <!-- calendar -->
+        <div class="col position-relative">
+          <div class="card shadow-none border-0 mb-0 rounded-0">
+            <div class="card-body pb-0">
+              <!-- <full-calendar [options]="calendarOptions"></full-calendar> -->
+              <div
+                class="d-flex justify-content-between flex-md-row flex-column mt-0"
+              >
+                <div>
+                  <h2 class="text-dark card-header">Interview</h2>
+                </div>
+                <button
+                  class="btn btn-primary mr-2 mb-2 btn-toggle-sidebar"
+                  (click)="AddEvent()"
+                  rippleEffect
+                >
+                  <span [data-feather]="'plus'" [class]="'mr-25'"></span>
+                  <span class="align-middle">Add Event</span>
+                </button>
+              </div>
+              <div class="card-body d-flex justify-content-center"></div>
+              <app-interview-table> </app-interview-table>
+            </div>
+          </div>
+        </div>
+        <!-- calendar -->
+      </div>
+    </div>
+
+    <!-- calendar event sidebar -->
+    <core-sidebar
+      class="modal modal-slide-in fade event-sidebar"
+      name="calendar-event-sidebar"
+      overlayClass="modal-backdrop"
+      hideOnEsc="true"
+    >
+      <app-calendar-event-sidebar></app-calendar-event-sidebar>
+    </core-sidebar>
+    <!--/ calendar event sidebar -->
+  </div>
+</div>

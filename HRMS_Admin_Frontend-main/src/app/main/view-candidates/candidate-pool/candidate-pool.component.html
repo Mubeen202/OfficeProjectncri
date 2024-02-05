@@ -1,0 +1,252 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <!-- Kitchen Sink Datatables -->
+    <section id="ngx-datatable-kitchen-sink">
+      <!-- Stats Horizontal Card -->
+      <app-stats-card [statsJobs]="statsJobs"></app-stats-card>
+      <!--/ Stats Horizontal Card -->
+
+      <div class="card">
+        <h2 class="card-header">Candidate Pool</h2>
+        <hr />
+
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="d-flex justify-content-between align-items-center m-1">
+              <label class="d-flex align-items-center"
+                >Show
+                <select
+                  class="form-control mx-25"
+                  [(ngModel)]="basicSelectedOption"
+                >
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+                entries</label
+              >
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 d-flex justify-content-start justify-content-md-end"
+          >
+            <div
+              class="d-flex align-items-center justify-content-end pr-1 pb-1 pb-md-0"
+            >
+              <div class="col-md-6 col-12 d-flex justify-content-md-end">
+                <div
+                  class="d-flex align-items-center justify-content-end pr-1 pb-1 pl-1 pl-md-0 pb-md-0"
+                >
+                  <label class="d-flex align-items-center"
+                    >Search<input
+                      type="search"
+                      placeholder="Search"
+                      class="form-control ml-25"
+                      (keyup)="filterUpdate($event)"
+                      (search)="filterUpdate($event)"
+                  /></label>
+                </div>
+              </div>
+              <a
+                csvLink
+                [data]="exportCSVData"
+                class="btn btn-outline-primary btn-sm-block float-right ml-1 mr-1 w-100"
+                rippleEffect
+              >
+                <span [data-feather]="'external-link'" [class]="'mr-25'"></span
+                >Export</a
+              >
+
+              <button
+                class="btn btn-primary ml-1 w-50"
+                [routerLink]="['/careers/add-candidate']"
+                rippleEffect
+              >
+                <span class="d-none d-sm-inline-block">Add A Candidate </span>
+              </button>
+
+          
+
+
+              <button
+                class="btn btn-primary ml-1 w-100"
+                [routerLink]="['/careers/link-candidate']"
+                rippleEffect
+              >
+                <span class="d-none d-sm-inline-block">Candidate Link To Job</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <ngx-datatable
+          [rows]="data"
+          [rowHeight]="58"
+          class="bootstrap core-bootstrap"
+          [limit]="10"
+          [columnMode]="ColumnMode.force"
+          [headerHeight]="40"
+          [footerHeight]="50"
+          [scrollbarH]="true"
+          [selectionType]="SelectionType.checkbox"
+          [limit]="basicSelectedOption"
+          (activate)="onActivate($event)"
+          (select)="onSelect($event)"
+        >
+          <ngx-datatable-column
+            [width]="50"
+            [sortable]="false"
+            [canAutoResize]="false"
+            [draggable]="false"
+            [resizeable]="false"
+          >
+            <ng-template
+              ngx-datatable-header-template
+              let-value="value"
+              let-allRowsSelected="allRowsSelected"
+              let-selectFn="selectFn"
+            >
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  [checked]="allRowsSelected"
+                  (change)="selectFn(!allRowsSelected)"
+                  id="headerChkbxRef"
+                />
+                <label
+                  class="custom-control-label"
+                  for="headerChkbxRef"
+                ></label>
+              </div>
+            </ng-template>
+            <ng-template
+              ngx-datatable-cell-template
+              let-rowIndex="rowIndex"
+              let-value="value"
+              let-isSelected="isSelected"
+              let-onCheckboxChangeFn="onCheckboxChangeFn"
+            >
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  [checked]="isSelected"
+                  (change)="onCheckboxChangeFn($event)"
+                  id="rowChkbxRef{{ rowIndex }}"
+                />
+                <label
+                  class="custom-control-label"
+                  for="rowChkbxRef{{ rowIndex }}"
+                ></label>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Candidate Name" prop="name" [width]="200">
+            <ng-template
+              let-row="row"
+              let-name="value"
+              ngx-datatable-cell-template
+            >
+              <div class="cell-line-height">
+                <a (click)="onChnageUrl(row)" class="font-medium-1 d-block">
+                  <span class="font-weight-bold">{{ row.lastName }}</span></a
+                >
+                <span class="text-muted font-small-2"> {{ row.email }}</span>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            name="Job Opening"
+            prop="careerJobs"
+            [width]="120"
+          ></ngx-datatable-column>
+          <ngx-datatable-column
+            name="Recruiter"
+            prop="updated_by"
+            [width]="120"
+          ></ngx-datatable-column>
+          <ngx-datatable-column
+            name="Last Email"
+            prop="start_date"
+            [width]="120"
+          ></ngx-datatable-column>
+
+          <ngx-datatable-column name="Status" prop="isActive" [width]="120">
+            <ng-template let-status="value" ngx-datatable-cell-template>
+              <div
+                class="badge badge-pill"
+                [ngClass]="{
+                  'badge-light-primary': status == 'active',
+                  'badge-light-success': status == 'inactive',
+                  'badge-light-danger': status == 'pending',
+                  'badge-light-warning': status == '4',
+                  'badge-light-info': status == '5'
+                }"
+              >
+                {{
+                  status == 'active'
+                    ? 'active'
+                    : status == 'inactive'
+                    ? 'inactive'
+                    : status == 'pending'
+                    ? 'pending'
+                    : 'active'
+                }}
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Actions" [width]="50" [sortable]="false">
+            <ng-template ngx-datatable-cell-template>
+              <div class="d-flex align-items-center">
+                <div ngbDropdown container="body">
+                  <a
+                    ngbDropdownToggle
+                    href="javascript:void(0);"
+                    class="hide-arrow"
+                    id="dropdownBrowserState"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i
+                      data-feather="more-vertical"
+                      class="text-primary cursor-pointer mr-50"
+                    ></i>
+                  </a>
+                  <div
+                    ngbDropdownMenu
+                    class="dropdown-menu-right"
+                    aria-labelledby="dropdownBrowserState"
+                  >
+                    <a
+                      href="javascript:void(0)"
+                      ngbDropdownItem
+                      class="d-flex align-items-center"
+                      ><i data-feather="file-text" class="mr-50"></i> Details</a
+                    >
+                    <a
+                      href="javascript:void(0)"
+                      ngbDropdownItem
+                      class="d-flex align-items-center"
+                      ><i data-feather="archive" class="mr-50"></i> Archive</a
+                    >
+                    <a
+                      href="javascript:void(0)"
+                      ngbDropdownItem
+                      class="d-flex align-items-center"
+                      ><i data-feather="trash-2" class="mr-50"></i> Delete</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </section>
+    <!--/ Kitchen Sink Datatables -->
+  </div>
+</div>
