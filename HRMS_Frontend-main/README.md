@@ -39,7 +39,7 @@ npm install
 In your application folder, run the following command in Terminal/Command to run your application
 
 ```
-ng serve --open
+
 ```
 The --open (or just -o) option automatically opens your browser to http://localhost:4200/.
 

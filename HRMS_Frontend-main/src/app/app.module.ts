@@ -56,9 +56,8 @@ const appRoutes: Routes = [
     CareersModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, {
-      scrollPositionRestoration: 'enabled', // Add options right here
-      relativeLinkResolution: 'legacy'
-    }),
+    scrollPositionRestoration: 'enabled'
+}),
     TranslateModule.forRoot(),
 
     //NgBootstrap

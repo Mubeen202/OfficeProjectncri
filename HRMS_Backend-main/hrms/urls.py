@@ -1,11 +1,11 @@
 from django.urls import path, include, re_path
 from django.views.static import serve
 from django.conf import settings
-from rest_framework_swagger.views import get_swagger_view
+# from rest_framework_swagger.views import get_swagger_view
 from django.contrib import admin
-schema_view = get_swagger_view(title="Swagger Docs For Hrms")
+# schema_view = get_swagger_view(title="Swagger Docs For Hrms")
 urlpatterns = [
-    re_path(r'^$', schema_view),
+    # re_path(r'^$', schema_view),
     path('admin/',admin.site.urls),
     path('',include('emailNotification.urls')),
     path('api/',include('careerJobs.urls')),

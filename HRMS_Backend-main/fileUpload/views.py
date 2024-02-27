@@ -11,11 +11,11 @@ from fileUpload.models import File
 # from django.core.files import File
 from .serializers import FileSerializer
 from django.http import JsonResponse
-import fitz
+# import fitz
 from django.http import HttpResponse
 
-import docx2txt
-import PyPDF2
+# import docx2txt
+# import PyPDF2
 # HOSTNAME = '192.168.100.108'
 # USERNAME = 'HRMS-DEV-VM\admin'
 # PASSWORD = 'HRMSDev@456'
@@ -80,7 +80,7 @@ class FileUploadView(viewsets.ViewSet):
         file_serializer = FileSerializer(data=request.data)
         if file_serializer.is_valid():
             file_serializer.save()
-            myprocess= docx2txt
+            # myprocess= docx2txt
             print('this is data', file_serializer.data['file'])
             
             return Response(
